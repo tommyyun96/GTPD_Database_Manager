@@ -20,7 +20,7 @@ export default class SideBar extends Component {
                 {/*<div className="sidebar-mobile-overlay" onClick={this.toggleMobileSidebar} />*/}
                 <ReactCSSTransitionGroup
                     component="div"
-                    className={cx("app-sidebar", backgroundColor, { 'sidebar-shadow': enableSidebarShadow })}
+                    className="app-sidebar bg-royal sidebar-text-light sidebar-shadow"
                     transitionName="SidebarAnimation"
                     transitionAppear={true}
                     transitionAppearTimeout={1500}
