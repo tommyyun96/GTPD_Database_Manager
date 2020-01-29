@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import cx from 'classnames'
 
-
+import Nav from './Nav'
 
 export default class SideBar extends Component {
     render() {
@@ -29,19 +29,7 @@ export default class SideBar extends Component {
                     {/*<HeaderLogo />*/}
                     <PerfectScrollbar>
                         <div className="app-sidebar__inner">
-                            {/*<Nav />*/}
-                            <h5 className="app-sidebar__heading">PRO VERSION</h5>
-                            <div className="metismenu vertical-nav-menu">
-                                <ul className="metismenu-container">
-                                    <li className="metismenu-item">
-                                        <a className="metismenu-link" href="https://dashboardpack.com/theme-details/architectui-dashboard-react-pro" target="_blank">
-                                            <i className="metismenu-icon pe-7s-diamond"></i>
-                                            Upgrade to PRO
-                            </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h5 className="app-sidebar__heading">Menu</h5>
+                            <Nav />
                         </div>
                     </PerfectScrollbar>
                     <div

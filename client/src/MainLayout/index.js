@@ -10,7 +10,7 @@ class MainLayout extends Component {
                     <SideBar />
                     <div className="app-main__outer">
                         <div className="app-main__inner">
-                            Hi, I'm the body
+                            Main Content here.
                         </div>
                         {/*<AppFooter />*/}
                     </div>
