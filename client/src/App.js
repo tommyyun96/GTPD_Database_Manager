@@ -3,7 +3,7 @@ import MainLayout from './MainLayout'
 
 function App() {
   return (
-    <div className="app-container app-theme-white fixed-header fixed-sidebar fixed-footer">
+    <div className="app-theme">
         <MainLayout/>
     </div>
   );

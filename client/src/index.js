@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 /* Custom css addon */
-import './assets/base.css'
+import './base.css'
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';

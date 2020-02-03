@@ -7,20 +7,12 @@ import Nav from './Nav'
 
 export default class SideBar extends Component {
     render() {
-        let {
-            backgroundColor,
-            enableBackgroundImage,
-            enableSidebarShadow,
-            backgroundImage,
-            backgroundImageOpacity,
-        } = this.props;
-
         return (
             <Fragment>
                 {/*<div className="sidebar-mobile-overlay" onClick={this.toggleMobileSidebar} />*/}
                 <ReactCSSTransitionGroup
                     component="div"
-                    className="app-sidebar bg-royal sidebar-text-light sidebar-shadow"
+                    className="app-sidebar"  //
                     transitionName="SidebarAnimation"
                     transitionAppear={true}
                     transitionAppearTimeout={1500}
@@ -33,10 +25,8 @@ export default class SideBar extends Component {
                         </div>
                     </PerfectScrollbar>
                     <div
-                        className={cx("app-sidebar-bg", backgroundImageOpacity)}
-                        style={{
-                            backgroundImage: enableBackgroundImage ? 'url(' + backgroundImage + ')' : null
-                        }}>
+                        className={"app-sidebar-bg"}
+                        >
                     </div>
                 </ReactCSSTransitionGroup>
             </Fragment>
