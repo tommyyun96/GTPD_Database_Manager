@@ -10,6 +10,9 @@ import './index.css';
 /* Custom css addon */
 import './base.css'
 
+/* fontawesome addon */
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

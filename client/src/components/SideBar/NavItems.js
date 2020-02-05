@@ -1,52 +1,51 @@
 export const TableNav = [
     {
-        icon: 'pe-7s-rocket',
+        icon: 'fas fa-table',
         label: 'CrimeAnalytics',
-        to: '#/elements/buttons-standard',
         content: [
             {
                 label: 'Incidents',
-                to: '#/elements/buttons-standard'
+                to: '/tables/CrimeAnalytics/Incidents'
             },
             {
                 label: 'Times',
-                to: '#/elements/icons',
+                to: '/tables/CrimeAnalytics/Times',
             },
             {
                 label: 'Codes-Addresses',
-                to: '#/elements/badges-labels',
+                to: '/tables/CrimeAnalytics/Codes-Addresses',
             },
             {
                 label: 'Codes-Offenses',
-                to: '#/elements/badges-labels',
+                to: '/tables/CrimeAnalytics/Codes-Offenses',
             }
         ]
     },
     {
         icon: 'pe-7s-rocket',
         label: 'GTPD RMS',
-        to: '#/elements/icons',
+        to: '/tables/GTPD_RMS',
     },
     {
         icon: 'pe-7s-rocket',
         label: 'APD Shared',
-        to: '#/elements/badges-labels',
+        to: '/tables/APD_RMS',
     }
 ];
 export const ProgramNav = [
     {
         icon: 'pe-7s-rocket',
         label: 'Import APD',
-        to: '#/elements/buttons-standard'
+        to: '/progs/Import_APD'
     },
     {
         icon: 'pe-7s-rocket',
         label: 'Import GTPD',
-        to: '#/elements/icons',
+        to: '/progs/Import_GTPD',
     },
     {
         icon: 'pe-7s-rocket',
         label: 'Update Time Table',
-        to: '#/elements/badges-labels',
+        to: '/progs/Update_Time_Table',
     }
 ];
