@@ -12,7 +12,7 @@ export const TableNav = [
                 to: '/tables/CrimeAnalytics/Times',
             },
             {
-                label: 'Codes-Addresses',
+                label:'Codes- Addresses',
                 to: '/tables/CrimeAnalytics/Codes-Addresses',
             },
             {
@@ -22,29 +22,29 @@ export const TableNav = [
         ]
     },
     {
-        icon: 'pe-7s-rocket',
+        icon: 'fas fa-table',
         label: 'GTPD RMS',
         to: '/tables/GTPD_RMS',
     },
     {
-        icon: 'pe-7s-rocket',
+        icon: 'fas fa-table',
         label: 'APD Shared',
         to: '/tables/APD_RMS',
     }
 ];
 export const ProgramNav = [
     {
-        icon: 'pe-7s-rocket',
+        icon: 'fas fa-scroll',
         label: 'Import APD',
         to: '/progs/Import_APD'
     },
     {
-        icon: 'pe-7s-rocket',
+        icon: 'fas fa-scroll',
         label: 'Import GTPD',
         to: '/progs/Import_GTPD',
     },
     {
-        icon: 'pe-7s-rocket',
+        icon: 'fas fa-scroll',
         label: 'Update Time Table',
         to: '/progs/Update_Time_Table',
     }

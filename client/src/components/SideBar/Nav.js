@@ -24,7 +24,7 @@ export default class Nav extends Component {
                 </div>
                 */}
                 <h5 className="app-sidebar__heading">Tables</h5>
-                <MetisMenu content={TableNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
+                <MetisMenu style={{display: 'inline'}} content={TableNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
                 <h5 className="app-sidebar__heading">Programs</h5>
                 <MetisMenu content={ProgramNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
                 

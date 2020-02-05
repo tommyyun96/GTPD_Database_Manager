@@ -176,13 +176,13 @@
     .vertical-nav-menu .metismenu-container .metismenu-link {
       transition: transform .2s, height 300ms, color 300ms, background-color 300ms;
       display: block;
+      height: fit-content;
       line-height: 2.5rem;
-      height: 2.5rem;
       padding: 0 1.5rem 0 45px;
       position: relative;
       border-radius: 0.25rem;
       color: rgba(255,255,255,0.7);
-      white-space: nowrap; }
+      white-space: normal; }
       .vertical-nav-menu .metismenu-container .metismenu-link:hover {
         background: rgba(255,255,255,0.15);
         text-decoration: none; }
@@ -229,7 +229,7 @@
           top: 0;
           border-radius: 15px; }
         .vertical-nav-menu .metismenu-container .metismenu-container.visible > .metismenu-item > .metismenu-link {
-          height: 2.3em;
+          height: fit-content;
           line-height: 2.3em;
           color: #868e96; }
           .vertical-nav-menu .metismenu-container .metismenu-container.visible > .metismenu-item > .metismenu-link:hover {
