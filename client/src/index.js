@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 /* Custom css addon */
-import './base.css'
+import './asset/base.css'
 
 /* fontawesome addon */
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css'

@@ -7,7 +7,23 @@
 .app-main{
   padding-top: 60px;
   float: 1px;
+  z-index: 8;
+  display: flex;
+  flex:1;
+  position: relative;
 }
+
+
+.app-main__outer {
+  margin-left: 280px;
+  display: flex;
+  flex:1;
+  z-index: 9;
+  background-image: url('./image/Picture1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 
 .app-header{
   position: fixed;
@@ -29,7 +45,7 @@
   padding-top:60px;
   background: #343a40;
   border-right: 0;
-  position: relative;
+  position: fixed;
   display: flex;
   overflow: hidden;
   transition: all .2s;
@@ -107,14 +123,13 @@
 .ps--focus > .ps__rail-x,
 .ps--focus > .ps__rail-y,
 .ps--scrolling-x > .ps__rail-x,
-.ps--scrolling-y > .ps__rail-y {
-  opacity: 0.6; }
+.ps--scrolling-y > .ps__rail-y,
 
 .ps__rail-x:hover,
 .ps__rail-y:hover,
 .ps__rail-x:focus,
 .ps__rail-y:focus {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #343a40;
   opacity: 0.9; }
 
 /*
@@ -131,7 +146,7 @@
   position: absolute; }
 
 .ps__thumb-y {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #343a40;
   border-radius: 6px;
   transition: background-color .2s linear, width .2s ease-in-out;
   width: 6px;
@@ -142,12 +157,17 @@
 
 .ps__rail-x:hover > .ps__thumb-x,
 .ps__rail-x:focus > .ps__thumb-x {
-  background-color: rgba(0, 0, 0, 0.12);
-  height: 11px; }
+  background-color: #343a40;
+  height: 11px; 
+}
 
-.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:hover > .ps__thumb-y {
+  background-color: #343a40;
+  height: 11px; 
+}
+
 .ps__rail-y:focus > .ps__thumb-y {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: #343a40;
   width: 11px; }
 
 .vertical-nav-menu {
@@ -176,7 +196,7 @@
     .vertical-nav-menu .metismenu-container .metismenu-link {
       transition: transform .2s, height 300ms, color 300ms, background-color 300ms;
       display: block;
-      height: fit-content;
+      height: auto;
       line-height: 2.5rem;
       padding: 0 1.5rem 0 45px;
       position: relative;
@@ -229,7 +249,7 @@
           top: 0;
           border-radius: 15px; }
         .vertical-nav-menu .metismenu-container .metismenu-container.visible > .metismenu-item > .metismenu-link {
-          height: fit-content;
+          height: auto;
           line-height: 2.3em;
           color: #868e96; }
           .vertical-nav-menu .metismenu-container .metismenu-container.visible > .metismenu-item > .metismenu-link:hover {
@@ -240,7 +260,7 @@
             color: #fff;
             background: rgba(255,255,255,0.15); }
       .vertical-nav-menu .metismenu-container .metismenu-container .metismenu-item > .metismenu-link {
-        height: 0;
+        height: 0px;
         overflow: hidden; }
       .vertical-nav-menu .metismenu-container .metismenu-container .metismenu-link {
         padding-left: 1em; }
