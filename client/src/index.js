@@ -7,6 +7,9 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
+/* bootstrap addon */
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 /* Custom css addon */
 import './asset/base.css'
 

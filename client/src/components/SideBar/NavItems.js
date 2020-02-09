@@ -1,4 +1,12 @@
-export const TableNav = [
+export const ViewNav = [
+    {
+        icon: 'far fa-bookmark',
+        label: 'Incident Overview',
+        to: '/views/Incident_Overview'
+    }
+]
+
+export const TableNav = function() {console.log("DID"); return ([
     {
         icon: 'fas fa-table',
         label: 'CrimeAnalytics',
@@ -31,7 +39,8 @@ export const TableNav = [
         label: 'APD Shared',
         to: '/tables/APD_RMS',
     }
-];
+])}();
+
 export const ProgramNav = [
     {
         icon: 'fas fa-scroll',

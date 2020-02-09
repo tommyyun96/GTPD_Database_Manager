@@ -48,8 +48,12 @@ function add_router(app) {
     app.get('/showall', function (req, res) {
         queryString = query_factory.showall();
         db_query(queryString, (err, result) => {
-            if (!err) res.send(result);
-            else res.status(400).send(err);
+            if (!err) {
+                res.send(result);
+            }
+            else {
+                res.status(400).send(err);
+            }
         });
     });
 }
@@ -95,6 +99,7 @@ config_db = async (next) => {
 };
 
 module.exports = function (app) {
+    console.log(process.argv)
     // Use recursion to repeatedly retry database configuration attmpt.
     db_connection_check = () => {
         config_db((conn, error_reason) => {
@@ -104,7 +109,7 @@ module.exports = function (app) {
                 console.log('\x1b[0m', "[Server] Now attaching router...\n")
                 console.log('[Server] Router successfully attached.\n');
                 console.log("[Client] Now starting the client");
-                client = exec('npm run client')
+                client = exec('npm start --prefix client')
                 client.stdout.on('data', (data) => { console.log('[Client] : ' + data) });
             }
             else {

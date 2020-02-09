@@ -1,13 +1,19 @@
 import React, {Component, Fragment} from 'react';
 import MetisMenu from 'react-metismenu';
 
-import {TableNav, ProgramNav} from './NavItems';
+import {ViewNav, TableNav, ProgramNav} from './NavItems';
 
 export default class Nav extends Component {
 
     state = {};
 
     render() {
+        var TTT = TableNav;
+        TableNav[0].content.push(
+            {
+                label: 'Codes-Offenses',
+                to: '/tables/CrimeAnalytics/Codes-Offenses',
+            })
         return (
             <Fragment>
                 {/*
@@ -23,6 +29,8 @@ export default class Nav extends Component {
                     </ul>
                 </div>
                 */}
+                <h5 className="app-sidebar__heading">Views</h5>
+                <MetisMenu style={{display: 'inline'}} content={ViewNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
                 <h5 className="app-sidebar__heading">Tables</h5>
                 <MetisMenu style={{display: 'inline'}} content={TableNav} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
                 <h5 className="app-sidebar__heading">Programs</h5>

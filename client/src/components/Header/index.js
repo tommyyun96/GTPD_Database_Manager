@@ -4,7 +4,9 @@ class Header extends Component {
     render() {
         return (
             <div className="app-header">
-                <h1 style={{margin: '0px'  }}>GTPD Database Manager</h1>
+                <div className="title">
+                    GTPD Database Manager
+                </div>
             </div>
         )
     }

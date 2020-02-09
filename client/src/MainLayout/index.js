@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react'
 import Header from '../components/Header'
 import SideBar from '../components/SideBar'
-import {MDBDataTable} from 'mdbreact'
+import Data from '../components/Content/DefaultData'
 
 class MainLayout extends Component {
     constructor() {
@@ -17,9 +17,9 @@ class MainLayout extends Component {
                     <SideBar />
                     <div className="app-main__outer">
                         <div className="app-main__inner">
-                            <MDBDataTable></MDBDataTable>
-                            Main Content here.
+                            <Data/>
                         </div>
+                        <div className="overlay"/>
                     </div>
                 </div>
             </Fragment>

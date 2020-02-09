@@ -7,7 +7,7 @@ module.exports.showall = function(additional_join_statement=null, criteria=null,
             - criteria: ( len([OCA Number]) = 8 )
      */
     return '\
-        SELECT distinct top (%d) [OCA Number] as [Incident Number]\n' +
+        SELECT distinct top 1000 [OCA Number] as [Incident Number]\n' +
         '\
             , CONVERT(varchar, [Report Date], 23) as [Report Date]\
             , convert(varchar, [From Time], 8) as [Time]\
