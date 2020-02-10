@@ -4,8 +4,11 @@ class Header extends Component {
     render() {
         return (
             <div className="app-header">
-                <div className="title">
-                    GTPD Database Manager
+                <div className="app-title">
+                    GT Police Department
+                </div>
+                <div className="app-header__inner">
+                    CrimeAnalytics (Admin)
                 </div>
             </div>
         )

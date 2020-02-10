@@ -1,0 +1,6 @@
+[
+    ["CrimeAnalytics", ["APD Narratives"]],
+    ["SS_GARecords_Incident", ["tblIncidentArrest", "tblIncidentDrug", "tblIncidentImage"]],
+    ["SS_GARecords_Config", ["tblAgencyInfo", "tblLkpIBROffense", "tblLkpIBROffenseUser"]],
+    ["SS_GAShared_Config", ["tblLkpGenMO", "tblLkpGenState", "tblLkpGenLocationCode"]]
+]

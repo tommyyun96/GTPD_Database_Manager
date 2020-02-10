@@ -3,6 +3,7 @@ const sql = require("mssql");
 var config = require('./db_config')
 const read = require('read')
 const { exec } = require('child_process')
+const fs = require('fs');
 
 
 // Contains methods for generating common query.
@@ -45,6 +46,7 @@ function db_query(query_string, next) {
 
 // Router
 function add_router(app) {
+    /* Data for 'Incident Overview' page */
     app.get('/showall', function (req, res) {
         queryString = query_factory.showall();
         db_query(queryString, (err, result) => {
@@ -55,6 +57,14 @@ function add_router(app) {
                 res.status(400).send(err);
             }
         });
+    });
+
+    /* List of user selected tables */
+    app.get('/selected_tables', function (req, res) {
+        let rawdata = fs.readFileSync('./server/user_data/selected_tables.json');
+        let selected_tables = JSON.parse(rawdata);
+        console.log(selected_tables);
+        res.send(selected_tables);
     });
 }
 
@@ -99,7 +109,6 @@ config_db = async (next) => {
 };
 
 module.exports = function (app) {
-    console.log(process.argv)
     // Use recursion to repeatedly retry database configuration attmpt.
     db_connection_check = () => {
         config_db((conn, error_reason) => {
@@ -108,9 +117,16 @@ module.exports = function (app) {
                 add_router(app);
                 console.log('\x1b[0m', "[Server] Now attaching router...\n")
                 console.log('[Server] Router successfully attached.\n');
-                console.log("[Client] Now starting the client");
-                client = exec('npm start --prefix client')
-                client.stdout.on('data', (data) => { console.log('[Client] : ' + data) });
+                if(process.argv[2] && process.argv[2]=="no-client")
+                {
+                    console.log("[Server] Server-only mode. Client would not start.");    
+                }
+                else
+                {
+                    console.log("[Client] Now starting the client");
+                    client = exec('npm start --prefix client')
+                    client.stdout.on('data', (data) => { console.log('[Client] : ' + data) });
+                }
             }
             else {
                 console.log('\x1b[31m', "[Server] Database configuration failed!\n" + error_reason + '\n');

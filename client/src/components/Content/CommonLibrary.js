@@ -17,7 +17,6 @@ for(var i=0;i<incident_keys.length;i++)
 
 module.exports.incident_datatable_feeds = function(data)
 {
-    console.log(data)
     data.forEach(element => {
         incident_keys.forEach(key => {
             if(element[key] == null)    element[key]='-'

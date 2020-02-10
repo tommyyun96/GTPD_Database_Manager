@@ -44,7 +44,6 @@ export default class Data extends Component {
         fetch('/showall')
             .then(results => {
                 results.json().then(data => {
-                    console.log(data[0])
                     this.populateData(data)
             })})
             .catch(err => console.error(err))

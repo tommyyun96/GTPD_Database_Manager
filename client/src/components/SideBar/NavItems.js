@@ -45,7 +45,12 @@ export const ProgramNav = [
     {
         icon: 'fas fa-scroll',
         label: 'Import APD',
-        to: '/progs/Import_APD'
+        content: [
+            {
+                label: 'Step1',
+                to: '/progs/Step1'
+            }
+        ]
     },
     {
         icon: 'fas fa-scroll',

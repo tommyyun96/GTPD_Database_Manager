@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "client": "npm start --prefix client",
+    "server": "node ./server/index.js no-client"
   }
 }
