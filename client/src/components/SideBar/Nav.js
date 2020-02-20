@@ -7,25 +7,16 @@ export default class Nav extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {view: ViewNav, table: [], program: ProgramNav}
-    }
-
-    async componentWillMount() {
-        this.state = {view: ViewNav, table: TableNav, program: ProgramNav};
-        /*
+        this.state = {view: ViewNav, program: ProgramNav, tableLoaded: false}
+        
         fetch('/selected_tables')
             .then(results => {
                 results.json().then(data => {
-                    this.setState({table: this.parse_table_list(data)});
-                })
-            })
-            .catch(err => console.log(err));*/
-        const response = await fetch('/selected_tables');
-        const data = await response.json();
-        this.setState({table: this.parse_table_list(data)});
-        console.log('ddd;')
+                    this.setState({tableLoaded: true, table: this.parse_table_list(data)});
+            })})
+            .catch(err => console.error(err))
     }
-
+    
     parse_table_list (data) {
         return (data.map((database) => {
             return ({                                       
@@ -47,24 +38,13 @@ export default class Nav extends Component {
         console.log(this.state.table);
         return (
             <Fragment>
-
-                {/*
-                <h5 className="app-sidebar__heading">GTPD DB Manager</h5>
-                <div className="metismenu vertical-nav-menu">
-                    <ul className="metismenu-container">
-                        <li className="metismenu-item">
-                            <a className="metismenu-link" href="https://dashboardpack.com/theme-details/architectui-dashboard-react-pro" target="_blank">
-                                <i className="metismenu-icon pe-7s-diamond"></i>
-                                Upgrade to PRO
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                */}
                 <h5 className="app-sidebar__heading">Views</h5>
                 <MetisMenu content={this.state.view} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
+                
                 <h5 className="app-sidebar__heading">Tables</h5>
-                <MetisMenu content={this.state.table} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
+                {this.state.tableLoaded ?
+                    <MetisMenu content={this.state.table} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
+                : <i class="spinner fas fa-spinner fa-spin"></i>}
                 <h5 className="app-sidebar__heading">Programs</h5>
                 <MetisMenu content={this.state.program} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
                 

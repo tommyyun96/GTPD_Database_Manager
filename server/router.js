@@ -64,7 +64,8 @@ function add_router(app) {
         let rawdata = fs.readFileSync('./server/user_data/selected_tables.json');
         let selected_tables = JSON.parse(rawdata);
         console.log(selected_tables);
-        res.send(selected_tables);
+        setTimeout(()=>{res.json(selected_tables)}, 2000)
+        //res.json(selected_tables);
     });
 }
 

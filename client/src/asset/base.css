@@ -229,6 +229,14 @@ tbody {
   background-color: #343a40;
   width: 11px; }
 
+
+
+.spinner {
+  color: rgba(255,255,255,0.7);
+  opacity: 0.3;
+  font-size: 25px;
+}
+
 .vertical-nav-menu {
   position: relative; }
   .vertical-nav-menu a {

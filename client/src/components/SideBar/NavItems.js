@@ -6,7 +6,7 @@ export const ViewNav = [
     }
 ]
 
-export const TableNav = function() {console.log("DID"); return ([
+export const TableNav = function() {return ([
     {
         icon: 'fas fa-table',
         label: 'CrimeAnalytics',

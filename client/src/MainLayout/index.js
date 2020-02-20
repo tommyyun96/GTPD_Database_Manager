@@ -4,12 +4,8 @@ import SideBar from '../components/SideBar'
 import Data from '../components/Content/DefaultData'
 
 class MainLayout extends Component {
-    constructor() {
-        super();
-        this.state = {cnt: 1}
-    }
+    
     render() {
-        console.log(this.state.cnt);
         return (
             <Fragment>
                 <Header/>
