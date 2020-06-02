@@ -1,13 +1,22 @@
 import React, {Component, Fragment} from 'react';
 import MetisMenu from 'react-metismenu';
 
-import {ViewNav, TableNav, ProgramNav} from './NavItems';
+import {ViewNav, TableNav, ProgramNav, CANav, RMSNav, ArchiveNav} from './NavItems';
 
 export default class Nav extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {view: ViewNav, program: ProgramNav, tableLoaded: false}
+        this.state = {
+            view: ViewNav, 
+            program: ProgramNav, 
+            tableLoaded: false,
+            CALoaded: false,
+            CA: CANav,
+            RMS: RMSNav,
+            Archive: ArchiveNav,
+
+        }
         
         fetch('/selected_tables')
             .then(results => {
@@ -38,15 +47,17 @@ export default class Nav extends Component {
         console.log(this.state.table);
         return (
             <Fragment>
-                <h5 className="app-sidebar__heading">Views</h5>
-                <MetisMenu content={this.state.view} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
+                <h5 className="app-sidebar__heading">RMS</h5>
+                <MetisMenu content={this.state.RMS} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
                 
-                <h5 className="app-sidebar__heading">Tables</h5>
-                {this.state.tableLoaded ?
-                    <MetisMenu content={this.state.table} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
-                : <i class="spinner fas fa-spinner fa-spin"></i>}
+                <h5 className="app-sidebar__heading">Crime Analytics</h5>
+                <MetisMenu content={this.state.CA} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
+                
                 <h5 className="app-sidebar__heading">Programs</h5>
                 <MetisMenu content={this.state.program} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
+                
+                <h5 className="app-sidebar__heading">Archive</h5>
+                <MetisMenu content={this.state.Archive} activeLinkFromLocation className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="fas fa-chevron-down"/>
                 
             </Fragment>
         );
