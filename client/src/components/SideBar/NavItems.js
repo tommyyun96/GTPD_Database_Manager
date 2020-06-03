@@ -60,9 +60,17 @@ export const CANav = [
         label: 'GTPD_Only',
         content: [
             {
-                label: 'Table1',
-                to: '/CrimeAnalytics/GTPD/table1'
-            }
+                label: 'IncidentOffenses',
+                to: '/CrimeAnalytics/GTPD/IncidentOffenses'
+            },
+            {
+                label: 'Codes_Addresses_Unique',
+                to: '/CrimeAnalytics/GTPD/Codes_Addresses_Unique'
+            },
+            {
+                label: 'Repeat_Offenders',
+                to: '/CrimeAnalytics/GTPD/Repeat_Offenders'
+            },
         ]
     },
     {
@@ -70,9 +78,17 @@ export const CANav = [
         label: 'APD_Only',
         content: [
             {
-                label: 'Table1',
-                to: '/CrimeAnalytics/APD/table1'
-            }
+                label: 'IncidentOffenses',
+                to: '/CrimeAnalytics/APD/IncidentOffenses'
+            },
+            {
+                label: 'Narratives',
+                to: '/CrimeAnalytics/APD/Narratives'
+            },
+            {
+                label: 'Codes_Addresses_Unique',
+                to: '/CrimeAnalytics/APD/Codes_Addresses_Unique'
+            },
         ]
     },
 ];
@@ -83,29 +99,53 @@ export const RMSNav = [
         label: 'SS_GARecords_Incident',
         content: [
             {
-                label: 'Table1',
-                to: '/RMS/Incident/table1'
-            }
-        ]
-    },
-    {
-        icon: 'fas fa-scroll',
-        label: 'SS_GARecords_Offense',
-        content: [
+                label: 'Incident',
+                to: '/RMS/Incident/Incident'
+            },
             {
-                label: 'Table1',
-                to: '/RMS/Offense/table1'
-            }
-        ]
-    },
-    {
-        icon: 'fas fa-scroll',
-        label: 'SS_GARecords_Offender',
-        content: [
+                label: 'Arrest',
+                to: '/RMS/Incident/Arrest'
+            },
             {
-                label: 'Table1',
-                to: '/RMS/Offender/table1'
-            }
+                label: 'Drug',
+                to: '/RMS/Incident/Drug'
+            },
+            {
+                label: 'MO',
+                to: '/RMS/Incident/MO'
+            },
+            {
+                label: 'Offender',
+                to: '/RMS/Incident/Offender'
+            },
+            {
+                label: 'Offense',
+                to: '/RMS/Incident/Offense'
+            },
+            {
+                label: 'OffenseOffenderUsed',
+                to: '/RMS/Incident/OffenseOffenderUsed'
+            },
+            {
+                label: 'OffenseWeapon',
+                to: '/RMS/Incident/OffenseWeapon'
+            },
+            {
+                label: 'OthersInvolved',
+                to: '/RMS/Incident/OthersInvolved'
+            },
+            {
+                label: 'Property',
+                to: '/RMS/Incident/Property'
+            },
+            {
+                label: 'Supplement',
+                to: '/RMS/Incident/Supplement'
+            },
+            {
+                label: 'Victim',
+                to: '/RMS/Incident/Victim'
+            },
         ]
     },
 ];
