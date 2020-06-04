@@ -6,5 +6,9 @@
     "start": "node ./server/index.js",
     "client": "npm start --prefix client",
     "server": "node ./server/index.js no-client"
+  },
+  "dependencies": {
+    "mdbreact": "^4.27.0",
+    "react-router-dom": "^5.2.0"
   }
 }

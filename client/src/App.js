@@ -1,12 +1,15 @@
 import React from 'react';
-import MainLayout from './MainLayout'
+import MainLayout from './MainLayout/MainLayout.js'
+import {Switch, Route, BrowserRouter }from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="app-theme">
-        <MainLayout/>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div className="app-theme">
+                <MainLayout/>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
