@@ -17,7 +17,6 @@ export default class Data extends Component {
 
     
     populateData = function (data) {
-        var rows = [];
         var columns = [
             {value: 'IncidentNumber', field:'Incident Number', label: 'Incident Number', width: 100},
             {value: 'Offense', field:'Offense', label: 'Offense', width: 200},
@@ -31,6 +30,14 @@ export default class Data extends Component {
             {value: 'Case Status', field:'Case Status', label: 'Status', width: 50},
             {value: 'Department', field:'Department', label: 'Dept', width: 50},
         ]
+        
+        if(this.props.location.state) {
+            columns = this.props.location.state.columns
+            columns.unshift({value: 'IncidentNumber', field:'Incident Number', label: 'Incident Number', width: 100})
+            console.log(columns)
+        }
+        var rows = [];
+        
 
         //for every incident, populate a blank row with the column data
         for(var i = 0; i < data.length; i++) {
@@ -76,7 +83,7 @@ export default class Data extends Component {
             <div className="card"  style={{fontSize: 12}}>
                 <div className="row">
                     <div className="col-12">
-                        <button style={{marginLeft:'20px', marginTop:'20px', fontSize:'120%'}}className="btn btn-lg btn-primary"> <a style={{color:'white'}}href="/CustomColumn/RMSIncidentData">Columns</a></button>
+                        <button style={{marginLeft:'20px', marginTop:'20px', fontSize:'120%'}}className="btn btn-lg btn-primary"> <a style={{color:'white'}}href="/CustomColumn/RMSIncidentData">Change Columns</a></button>
                     </div>
                 </div>
                 <div className="card-body">

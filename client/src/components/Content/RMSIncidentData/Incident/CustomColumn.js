@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Select from "react-select";
+import {Redirect} from 'react-router-dom'
+
 
 
 const RMSIncidentcolumns = [
@@ -29,6 +31,7 @@ var columns = []
 class CustomColumn extends Component {
     state = {
         selectedColumns: [],
+        pathname: null,
     };
 
 
@@ -48,14 +51,18 @@ class CustomColumn extends Component {
         var {data} = this.props.match.params;
         if(data === 'RMSIncidentData') {
             columns = RMSIncidentcolumns
-            console.log(RMSIncidentcolumns.slice(0,2))
             this.setState({selectedColumns: RMSIncidentcolumns.slice(0,7)})
+            this.setState({pathname: '/RMS/Incident/Incident'})
         }
+    }
+    handleSubmit = () => {
+        this.setState({redirected: true})
     }
 
     render() {
         return(
             <div className="main">
+                {this.state.redirected ? <Redirect to={{pathname: this.state.pathname, state: {columns: this.state.selectedColumns}}}/> : null}
                 <div className="card filterTypeCards dateCard">
                     <h4 className="card-header">Custom Columns</h4>
                     <div className="card-body">
@@ -71,7 +78,12 @@ class CustomColumn extends Component {
                             </div>
                         </div>
                     </div>
+                    <div className="searchButton">
+                        <button onClick={this.handleSubmit} className="btn btn-primary" >Search</button>
+                    </div>
+                    
                 </div>
+                        
             </div>
         )
     }
