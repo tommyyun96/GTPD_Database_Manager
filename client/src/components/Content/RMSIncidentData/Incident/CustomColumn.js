@@ -1,30 +1,11 @@
 import React, { Component } from "react";
 import Select from "react-select";
 import {Redirect} from 'react-router-dom'
+import {IncidentColumns} from '../Columns'
 
 
 
-const RMSIncidentcolumns = [
-    /*DEFAULT*/
-    {value: 'Offense', field:'Offense', label: 'Offense', width: 200},
-    {value: 'Location', field:'Location', label: 'Location', width: 250},
-    {value: 'Location Landmark', field:'Location Landmark', label: 'Landmark', width: 200},
-    {value: 'From', field:'From', label: 'From Date/Time', width: 100},
-    {value: 'To', field:'To', label: 'To Date/Time', width: 100},
-    {value: 'Average Day', field:'Average Day', label: 'Avg Day', width: 100},
-    {value: 'Average Time', field:'Average Time', label: 'Avg Time', width: 100},
-    {value: 'Occurred Shift', field:'Occurred Shift', label: 'Occurred Shift', width: 100},
-    {value: 'Case Status', field:'Case Status', label: 'Status', width: 50},
-    {value: 'Department', field:'Department', label: 'Dept', width: 50},
-    /*OPTIONAL*/
-    {value: 'Unit', field: 'Unit', label: 'Unit', width: 50},
-    {value: 'Offenders', field: 'Offenders', label: 'Offenders', width: 200},
-    {value: 'Victims', field: 'Victims', label: 'Victims', width: 100},
-    {value: 'Property', field: 'Property', label: 'Property', width: 200},
-    {value: 'Officer Name', field: 'Officer', label: 'Officer', width: 200},
-    {value: 'Report Date', field: 'Report Date', label: 'Report Date', width: 200},
-    {value: 'ViolationCode', field: 'ViolationCode', label: 'Violation Code', width: 100},
-];
+const RMSIncidentcolumns = IncidentColumns
 var columns = []
 
 
