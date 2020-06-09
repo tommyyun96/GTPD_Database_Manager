@@ -139,3 +139,10 @@ module.exports.RMSIncident = function(additional_join_statement=null, criteria=n
         (criteria==null ? '' : ('WHERE ' + criteria + '\n'))+
         'ORDER BY [ReportDate] DESC, [ReportTime] DESC';
 }
+
+
+
+module.exports.getColumns = function() {
+    return '\
+	select top (1) * FROM [SS_GARecords_Incident].[dbo].[z_mirror_tblIncidentVictim_194]'
+}

@@ -47,6 +47,21 @@ export default class Data extends Component {
                     this.populateData(data)
             })})
             .catch(err => console.error(err))
+        fetch('/getColumns')
+            .then(results => {
+                results.json().then(data => {
+                    this.makeColumns(data)
+            })})
+            .catch(err => console.error(err))
+    }
+
+    makeColumns(data) {
+        var columns = Object.keys(data[0])
+        var script = ''
+        for(var i = 0; i<columns.length; i++) {
+            script += "{value:'"+columns[i]+"', field:'"+columns[i]+"', label:'"+columns[i]+"', width:200},\n"
+        }
+        console.log(script)
     }
 
     render() {

@@ -72,6 +72,19 @@ function add_router(app) {
         });
     });
 
+    app.get('/getColumns', function (req, res) {
+        queryString = query_factory.getColumns();
+        console.log(queryString)
+        db_query(queryString, (err, result) => {
+            if (!err) {
+                res.send(result);
+            }
+            else {
+                res.status(400).send(err);
+            }
+        });
+    });
+
     /* List of user selected tables */
     app.get('/selected_tables', function (req, res) {
         let rawdata = fs.readFileSync('./server/user_data/selected_tables.json');
