@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {MDBDataTable} from 'mdbreact'
-import {IncidentColumns} from '../Columns'
+import {tblIncident} from '../Columns'
 
 
 
@@ -18,7 +18,7 @@ export default class Data extends Component {
 
     
     populateData = function (data) {
-        var columns = IncidentColumns
+        var columns = tblIncident
         
         if(this.props.location.state) {
             columns = this.props.location.state.columns
