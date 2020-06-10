@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Select from "react-select";
 import {Redirect} from 'react-router-dom'
-import {tblIncident} from '../Columns'
+import {columnOptions} from '../Columns'
 
 
 
@@ -28,12 +28,11 @@ class CustomColumn extends Component {
     }
 
     componentDidMount() {
-        var {data} = this.props.match.params;
-        if(data === 'RMSIncidentData') {
-            columns = tblIncident
-            this.setState({selectedColumns: tblIncident.slice(0,7)})
-            this.setState({pathname: '/RMS/Incident/Incident'})
-        }
+        var {table} = this.props.match.params;
+        columns = columnOptions[table]
+        this.setState({selectedColumns: columnOptions[table].slice(0,10), pathname: '/RMS/Incident/'+table})
+
+
     }
     handleSubmit = () => {
         this.setState({redirected: true})

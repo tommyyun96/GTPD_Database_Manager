@@ -1,12 +1,8 @@
-export const tblIncident = [
+export const columnOptions= {
+    tblIncident: [
     {value: 'IncidentNumber', field:'IncidentNumber', label: 'IncidentNumber', width:150},
-    {value: 'ReportDate', field:'ReportDate', label: 'ReportDate', width:200},
-    {value: 'ReportTime', field:'ReportTime', label: 'ReportTime', width:200},
-    {value: 'DateIncidentEnded', field:'DateIncidentEnded', label: 'DateIncidentEnded', width:200},
-    {value: 'TimeIncidentEnded', field:'TimeIncidentEnded', label: 'TimeIncidentEnded', width:200},
-    {value: 'IncidentDate', field:'IncidentDate', label: 'IncidentDate', width:200},
-    {value: 'IncidentTime', field:'IncidentTime', label: 'IncidentTime', width:200},
-    {value: 'CaseStatus', field:'CaseStatus', label: 'CaseStatus', width:100},
+    {value: 'SynchronizeTimeStamp', field:'SynchronizeTimeStamp', label: 'SynchronizeTimeStamp', width:200},
+    {value: 'PriorTimeStamp', field:'PriorTimeStamp', label: 'PriorTimeStamp', width:200},
     {value: 'DateCreated', field:'DateCreated', label: 'DateCreated', width:200},
     {value: 'TimeCreated', field:'TimeCreated', label: 'TimeCreated', width:200},
     {value: 'CreatedBy', field:'CreatedBy', label: 'CreatedBy', width:200},
@@ -16,6 +12,13 @@ export const tblIncident = [
     {value: 'LastUpdatedTime', field:'LastUpdatedTime', label: 'LastUpdatedTime', width:200},
     {value: 'LastUpdatedBy', field:'LastUpdatedBy', label: 'LastUpdatedBy', width:200},
     {value: 'LastUpdatedBySSN', field:'LastUpdatedBySSN', label: 'LastUpdatedBySSN', width:200},
+    {value: 'ReportDate', field:'ReportDate', label: 'ReportDate', width:200},
+    {value: 'ReportTime', field:'ReportTime', label: 'ReportTime', width:200},
+    {value: 'DateIncidentEnded', field:'DateIncidentEnded', label: 'DateIncidentEnded', width:200},
+    {value: 'TimeIncidentEnded', field:'TimeIncidentEnded', label: 'TimeIncidentEnded', width:200},
+    {value: 'IncidentDate', field:'IncidentDate', label: 'IncidentDate', width:200},
+    {value: 'IncidentTime', field:'IncidentTime', label: 'IncidentTime', width:200},
+    {value: 'CaseStatus', field:'CaseStatus', label: 'CaseStatus', width:100},
     {value: 'ExceptionalClearance', field:'ExceptionalClearance', label: 'ExceptionalClearance', width:200},
     {value: 'ReportingOfficerID', field:'ReportingOfficerID', label: 'ReportingOfficerID', width:200},
     {value: 'ReportingOfficerName', field:'ReportingOfficerName', label: 'ReportingOfficerName', width:200},
@@ -97,10 +100,9 @@ export const tblIncident = [
     {value: 'StolenVehicles', field:'StolenVehicles', label: 'StolenVehicles', width: 200},
     {value: 'RecoveredVehicles', field:'RecoveredVehicles', label: 'RecoveredVehicles', width: 200},
     {value: 'SubmittedTimeWindow', field:'SubmittedTimeWindow', label: 'SubmittedTimeWindow', width: 200},
-]
+],
 
-export const tblIncidentArrest = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrest: [
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'SynchronizeTimeStamp', field:'SynchronizeTimeStamp', label:'SynchronizeTimeStamp', width:200},
     {value:'PriorTimeStamp', field:'PriorTimeStamp', label:'PriorTimeStamp', width:200},
@@ -272,11 +274,10 @@ export const tblIncidentArrest = [
     {value:'Expunged', field:'Expunged', label:'Expunged', width:200},
     {value:'Submitted', field:'Submitted', label:'Submitted', width:200},
     {value:'ProducedClearance', field:'ProducedClearance', label:'ProducedClearance', width:200},
-]
+],
 
 
-export const tblIncidentDrug = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentDrug: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -288,21 +289,19 @@ export const tblIncidentDrug = [
     {value:'DrugDescription', field:'DrugDescription', label:'DrugDescription', width:200},
     {value:'EstimatedValue', field:'EstimatedValue', label:'EstimatedValue', width:200},
     {value:'PropertyLoss', field:'PropertyLoss', label:'PropertyLoss', width:200},
-]
+],
 
-export const tblIncidentMO = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentMO: [
 {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
 {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
 {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
 {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
 {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
 {value:'MO', field:'MO', label:'MO', width:200},
-]
+],
 
 
-export const tblIncidentOffender = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffender: [
 {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
 {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
 {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -388,10 +387,9 @@ export const tblIncidentOffender = [
 {value:'BarringOfficerSSN', field:'BarringOfficerSSN', label:'BarringOfficerSSN', width:200},
 {value:'BarringPermanentBan', field:'BarringPermanentBan', label:'BarringPermanentBan', width:200},
 {value:'ResidentStatus', field:'ResidentStatus', label:'ResidentStatus', width:200},
-]
+],
 
-export const tblIncidentOffense = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffense: [
 {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
 {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
 {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -408,20 +406,18 @@ export const tblIncidentOffense = [
 {value:'Location', field:'Location', label:'Location', width:200},
 {value:'PremisesEntered', field:'PremisesEntered', label:'PremisesEntered', width:200},
 {value:'MethodOfEntry', field:'MethodOfEntry', label:'MethodOfEntry', width:200},
-]
+],
 
-export const tblIncidentOffenseOffenderUsed = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenseOffenderUsed: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'OffenderUsed', field:'OffenderUsed', label:'OffenderUsed', width:200},
-]
+],
 
-export const tblIncidentOffenseWeapon = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenseWeapon: [
 {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
 {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
 {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -429,10 +425,9 @@ export const tblIncidentOffenseWeapon = [
 {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
 {value:'Weapon', field:'Weapon', label:'Weapon', width:200},
 {value:'AutomaticFirearm', field:'AutomaticFirearm', label:'AutomaticFirearm', width:200},
-]
+],
 
-export const tblIncidentOthersInvolved = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOthersInvolved: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -488,10 +483,9 @@ export const tblIncidentOthersInvolved = [
     {value:'SecondaryPhoneNumber', field:'SecondaryPhoneNumber', label:'SecondaryPhoneNumber', width:200},
     {value:'DriverLicenseNumber', field:'DriverLicenseNumber', label:'DriverLicenseNumber', width:200},
     {value:'DriverLicenseState', field:'DriverLicenseState', label:'DriverLicenseState', width:200},    
-]
+],
 
-export const tblIncidentProperty = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentProperty: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -559,10 +553,9 @@ export const tblIncidentProperty = [
     {value:'SuspectsVehicle', field:'SuspectsVehicle', label:'SuspectsVehicle', width:200},
     {value:'Involvement', field:'Involvement', label:'Involvement', width:200},
     {value:'InvolvementDescription', field:'InvolvementDescription', label:'InvolvementDescription', width:200},    
-]
+],
 
-export const tblIncidentSupplement = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentSupplement: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -592,10 +585,9 @@ export const tblIncidentSupplement = [
     {value:'ReviewedBySSN', field:'ReviewedBySSN', label:'ReviewedBySSN', width:200},
     {value:'OriginalPrimaryOffense', field:'OriginalPrimaryOffense', label:'OriginalPrimaryOffense', width:200},
     {value:'OriginalPrimaryOffenseDescription', field:'OriginalPrimaryOffenseDescription', label:'OriginalPrimaryOffenseDescription', width:200},    
-]
+],
 
-export const tblIncidentVictim = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentVictim: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -662,17 +654,17 @@ export const tblIncidentVictim = [
     {value:'JustifiableCircumstance', field:'JustifiableCircumstance', label:'JustifiableCircumstance', width:200},
     {value:'ResidentStatus', field:'ResidentStatus', label:'ResidentStatus', width:200},
     {value:'OtherORINumber', field:'OtherORINumber', label:'OtherORINumber', width:200},    
-]
+],
 
 
 
 
-export const CleryCategories = [
+CleryCategories: [
     {value:'CleryAlias', field:'CleryAlias', label:'CleryAlias', width:150},
     {value:'Category', field:'Category', label:'Category', width:300},  
-]
+],
 
-export const NIBRSTranslationCodes = [
+NIBRSTranslationCodes: [
     {value:'DCICode', field:'DCICode', label:'DCICode', width:200},
     {value:'DCIDescription', field:'DCIDescription', label:'DCIDescription', width:200},  
     {value:'Translation', field:'Translation', label:'Translation', width:200},
@@ -681,15 +673,13 @@ export const NIBRSTranslationCodes = [
     {value:'TableName_Old', field:'TableName_Old', label:'TableName_Old', width:200},  
     {value:'TableName', field:'TableName', label:'TableName', width:200},
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200}, 
-]
+],
 
-export const tblConversionTimeStamp = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblConversionTimeStamp: [
     {value:'ConvertedDate', field:'ConvertedDate', label:'ConvertedDate', width:200},  
-]
+],
 
-export const tblIBRArrestDelete = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIBRArrestDelete: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'DeleteReason', field:'DeleteReason', label:'DeleteReason', width:200},
@@ -706,16 +696,14 @@ export const tblIBRArrestDelete = [
     {value:'ResidentStatus', field:'ResidentStatus', label:'ResidentStatus', width:200},
     {value:'JuvenileDisposition', field:'JuvenileDisposition', label:'JuvenileDisposition', width:200},
     {value:'DateLastSubmitted', field:'DateLastSubmitted', label:'DateLastSubmitted', width:200},    
-]
+],
 
-export const tblIBRArrestDeleteSubmission = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIBRArrestDeleteSubmission: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'DeleteReason', field:'DeleteReason', label:'DeleteReason', width:200},
-]
+],
 
-export const tblIBRIncidentDelete = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIBRIncidentDelete: [
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'DeleteReason', field:'DeleteReason', label:'DeleteReason', width:200},
     {value:'IncidentDate', field:'IncidentDate', label:'IncidentDate', width:200},
@@ -725,26 +713,23 @@ export const tblIBRIncidentDelete = [
     {value:'ExceptionalClearanceDate', field:'ExceptionalClearanceDate', label:'ExceptionalClearanceDate', width:200},
     {value:'CargoTheft', field:'CargoTheft', label:'CargoTheft', width:200},
     {value:'DateLastSubmitted', field:'DateLastSubmitted', label:'DateLastSubmitted', width:200},    
-]
+],
 
-export const tblIBRIncidentDeleteSubmission = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIBRIncidentDeleteSubmission: [
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'DeleteReason', field:'DeleteReason', label:'DeleteReason', width:200},
-]
+],
 
-export const tblIBRIncidentLocked = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIBRIncidentLocked: [
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'Locked', field:'Locked', label:'Locked', width:200},
     {value:'UserName', field:'UserName', label:'UserName', width:200},
     {value:'MachineName', field:'MachineName', label:'MachineName', width:200},
     {value:'DateLocked', field:'DateLocked', label:'DateLocked', width:200},
     {value:'TimeLocked', field:'TimeLocked', label:'TimeLocked', width:200},
-]
+],
 
-export const tblIBRSubmission = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIBRSubmission: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'ActivityDate', field:'ActivityDate', label:'ActivityDate', width:200},
     {value:'DateCreated', field:'DateCreated', label:'DateCreated', width:200},
@@ -762,10 +747,9 @@ export const tblIBRSubmission = [
     {value:'IBRFileName', field:'IBRFileName', label:'IBRFileName', width:200},
     {value:'IBRFilePath', field:'IBRFilePath', label:'IBRFilePath', width:200},
     {value:'IBRFileSize', field:'IBRFileSize', label:'IBRFileSize', width:200},
-]
+],
 
-export const IncidentApprovalLog = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+IncidentApprovalLog: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'DateApproved', field:'DateApproved', label:'DateApproved', width:200},
@@ -779,10 +763,9 @@ export const IncidentApprovalLog = [
     {value:'RoutedToDivision', field:'RoutedToDivision', label:'RoutedToDivision', width:200},
     {value:'RoutedToUnit', field:'RoutedToUnit', label:'RoutedToUnit', width:200},
     {value:'RouteReason', field:'RouteReason', label:'RouteReason', width:200},
-]
+],
 
-export const tblIncidentApprovalLogMerge = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentApprovalLogMerge: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'IndependentSupplement', field:'IndependentSupplement', label:'IndependentSupplement', width:200},
@@ -797,10 +780,9 @@ export const tblIncidentApprovalLogMerge = [
     {value:'RoutedToDivision', field:'RoutedToDivision', label:'RoutedToDivision', width:200},
     {value:'RoutedToUnit', field:'RoutedToUnit', label:'RoutedToUnit', width:200},
     {value:'RouteReason', field:'RouteReason', label:'RouteReason', width:200},
-]
+],
 
-export const tblIncidentArrestAlias = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrestAlias: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -816,10 +798,9 @@ export const tblIncidentArrestAlias = [
     {value:'AliasDateOfBirth', field:'AliasDateOfBirth', label:'AliasDateOfBirth', width:200},
     {value:'AliasSSN', field:'AliasSSN', label:'AliasSSN', width:200},
     {value:'AliasDescription', field:'AliasDescription', label:'AliasDescription', width:200},
-]
+],
 
-export const tblIncidentArrestAssistingOfficer = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrestAssistingOfficer: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -828,10 +809,9 @@ export const tblIncidentArrestAssistingOfficer = [
     {value:'OfficerID', field:'OfficerID', label:'OfficerID', width:200},
     {value:'OfficerName', field:'OfficerName', label:'OfficerName', width:200},
     {value:'OfficerSSN', field:'OfficerSSN', label:'OfficerSSN', width:200},
-]
+],
 
-export const tblIncidentArrestDrug = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrestDrug: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -839,10 +819,9 @@ export const tblIncidentArrestDrug = [
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'TypeCode', field:'TypeCode', label:'TypeCode', width:200},
     {value:'DrugDescription', field:'DrugDescription', label:'DrugDescription', width:200},
-]
+],
 
-export const tblIncidentArrestOffense = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrestOffense: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -876,9 +855,8 @@ export const tblIncidentArrestOffense = [
     {value:'Disposition', field:'Disposition', label:'Disposition', width:200},
     {value:'CourtStatute', field:'CourtStatute', label:'CourtStatute', width:200},
     {value:'CourtStatuteDescription', field:'CourtStatuteDescription', label:'CourtStatuteDescription', width:200},
-]
-export const tblIncidentArrestPhysicalFeatures = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+],
+tblIncidentArrestPhysicalFeatures: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -888,10 +866,9 @@ export const tblIncidentArrestPhysicalFeatures = [
     {value:'Location', field:'Location', label:'Location', width:200},
     {value:'BodyPart', field:'BodyPart', label:'BodyPart', width:200},
     {value:'FeatureDescription', field:'FeatureDescription', label:'FeatureDescription', width:200},
-]
+],
 
-export const tblIncidentArrestProperty = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrestProperty: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -899,10 +876,9 @@ export const tblIncidentArrestProperty = [
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'Quantity', field:'Quantity', label:'Quantity', width:200},
     {value:'PropertyDescription', field:'PropertyDescription', label:'PropertyDescription', width:200},
-]
+],
 
-export const tblIncidentArrestStatement = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrestStatement: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -915,10 +891,9 @@ export const tblIncidentArrestStatement = [
     {value:'OfficerName', field:'OfficerName', label:'OfficerName', width:200},
     {value:'Location', field:'Location', label:'Location', width:200},
     {value:'Statement', field:'Statement', label:'Statement', width:200},
-]
+],
 
-export const tblIncidentArrestWeapon = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrestWeapon: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -926,20 +901,18 @@ export const tblIncidentArrestWeapon = [
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'Weapon', field:'Weapon', label:'Weapon', width:200},
     {value:'AutomaticFirearm', field:'AutomaticFirearm', label:'AutomaticFirearm', width:200},
-]
+],
 
-export const tblIncidentArrestRelatedCase = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentArrestRelatedCase: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'RelatedCase', field:'RelatedCase', label:'RelatedCase', width:200},
-]
+],
 
-export const tblIncidentAssignment = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentAssignment: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -965,10 +938,9 @@ export const tblIncidentAssignment = [
     {value:'AssignmentType', field:'AssignmentType', label:'AssignmentType', width:200},
     {value:'Completed', field:'Completed', label:'Completed', width:200},
     {value:'Notes', field:'Notes', label:'Notes', width:200},
-]
+],
 
-export const tblIncidentAssistingOfficer = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentAssistingOfficer: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -977,10 +949,9 @@ export const tblIncidentAssistingOfficer = [
     {value:'OfficerID', field:'OfficerID', label:'OfficerID', width:200},
     {value:'OfficerName', field:'OfficerName', label:'OfficerName', width:200},
     {value:'OfficerSSN', field:'OfficerSSN', label:'OfficerSSN', width:200},
-]
+],
 
-export const tblIncidentAuditTrailDelete = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentAuditTrailDelete: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -990,10 +961,9 @@ export const tblIncidentAuditTrailDelete = [
     {value:'RecordOriginalSequenceNumber', field:'RecordOriginalSequenceNumber', label:'RecordOriginalSequenceNumber', width:200},
     {value:'RecordPrimaryKey', field:'RecordPrimaryKey', label:'RecordPrimaryKey', width:200},
     {value:'RecordDescription', field:'RecordDescription', label:'RecordDescription', width:200},
-]
+],
 
-export const tblIncidentAuditTrailUpdate = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentAuditTrailUpdate: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -1006,10 +976,9 @@ export const tblIncidentAuditTrailUpdate = [
     {value:'TableChanged', field:'TableChanged', label:'TableChanged', width:200},
     {value:'OriginalValue', field:'OriginalValue', label:'OriginalValue', width:200},
     {value:'NewValue', field:'NewValue', label:'NewValue', width:200},
-]
+],
 
-export const tblIncidentCaseNotes = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentCaseNotes: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -1031,10 +1000,9 @@ export const tblIncidentCaseNotes = [
     {value:'InvolvementType', field:'InvolvementType', label:'InvolvementType', width:200},
     {value:'Location', field:'Location', label:'Location', width:200},
     {value:'Notes', field:'Notes', label:'Notes', width:200},
-]
+],
 
-export const tblIncidentCaseNotesAuditTrail = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentCaseNotesAuditTrail: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -1050,40 +1018,36 @@ export const tblIncidentCaseNotesAuditTrail = [
     {value:'VisibleToUser', field:'OfficerSSN', label:'OfficerSSN', width:200},
     {value:'DeleteCaseNoteDate', field:'DeleteCaseNoteDate', label:'DeleteCaseNoteDate', width:200},
     {value:'DeleteCaseNoteTime', field:'DeleteCaseNoteTime', label:'DeleteCaseNoteTime', width:200},
-]
+],
 
-export const tblIncidentFVAbuseType = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentFVAbuseType: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'AbuseTypeCode', field:'AbuseTypeCode', label:'AbuseTypeCode', width:200},
-]
+],
 
-export const tblIncidentFVPoliceAction = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentFVPoliceAction: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'PoliceActionCode', field:'PoliceActionCode', label:'PoliceActionCode', width:200},
-]
+],
 
-export const tblIncidentFVRelationshipToVictim = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentFVRelationshipToVictim: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'RelationShipToVictim', field:'RelationShipToVictim', label:'RelationShipToVictim', width:200},
-]
+],
 
-export const tblIncidentImage = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentImage: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -1091,10 +1055,9 @@ export const tblIncidentImage = [
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'ImageDescription', field:'ImageDescription', label:'ImageDescription', width:200},
     {value:'ImageData', field:'ImageData', label:'ImageData', width:200},
-]
+],
 
-export const tblIncidentMergeLog = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentMergeLog: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'IndependentSupplement', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
@@ -1105,10 +1068,9 @@ export const tblIncidentMergeLog = [
     {value:'MergecByName', field:'MergecByName', label:'MergecByName', width:200},
     {value:'MachineName', field:'MachineName', label:'MachineName', width:200},
     {value:'MergedSupplements', field:'MergedSupplements', label:'MergedSupplements', width:200},
-]
+],
 
-export const tblIncidentOffenderAlias = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenderAlias: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -1124,10 +1086,9 @@ export const tblIncidentOffenderAlias = [
     {value:'AliasDateOfBirth', field:'AliasDateOfBirth', label:'AliasDateOfBirth', width:200},
     {value:'AliasSSN', field:'AliasSSN', label:'AliasSSN', width:200},
     {value:'AliasDescription', field:'AliasDescription', label:'AliasDescription', width:200},    
-]
+],
 
-export const tblIncidentOffenderPhysicalFeatures = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenderPhysicalFeatures: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -1137,20 +1098,18 @@ export const tblIncidentOffenderPhysicalFeatures = [
     {value:'Location', field:'Location', label:'Location', width:200},
     {value:'BodyPart', field:'BodyPart', label:'BodyPart', width:200},
     {value:'FeatureDescription', field:'FeatureDescription', label:'FeatureDescription', width:200},   
-]
+],
 
-export const tblIncidentOffenderRelatedOffense = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenderRelatedOffense: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'RelatedOffense', field:'RelatedOffense', label:'RelatedOffense', width:200},
-]
+],
 
-export const tblIncidentOffenderStatement = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenderStatement: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -1161,40 +1120,36 @@ export const tblIncidentOffenderStatement = [
     {value:'OfficerSSN', field:'OfficerSSN', label:'OfficerSSN', width:200},
     {value:'Location', field:'Location', label:'Location', width:200},  
     {value:'Statement', field:'Statement', label:'Statement', width:200},   
-]
+],
 
-export const tblIncidentOffenseBiasMotivated = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenseBiasMotivated: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'BiasMotivated', field:'BiasMotivated', label:'BiasMotivated', width:200},  
-]
+],
 
-export const tblIncidentOffenseCriminalActivity = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenseCriminalActivity: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'CriminalActivity', field:'CriminalActivity', label:'CriminalActivity', width:200},  
-]
+],
 
-export const tblIncidentOffenseGangActivity = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOffenseGangActivity: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'GangActivity', field:'GangActivity', label:'GangActivity', width:200},  
-]
+],
 
-export const tblIncidentOthersInvolvedStatement = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentOthersInvolvedStatement: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -1207,28 +1162,25 @@ export const tblIncidentOthersInvolvedStatement = [
     {value:'OfficerSSN', field:'OfficerSSN', label:'OfficerSSN', width:200},  
     {value:'Location', field:'Location', label:'Location', width:200},
     {value:'Statement', field:'Statement', label:'Statement', width:200},
-]
+],
 
-export const tblIncidentRecentlyUsed = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentRecentlyUsed: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'DateUsed', field:'DateUsed', label:'DateUsed', width:200},
     {value:'TimeUsed', field:'TimeUsed', label:'TimeUsed', width:200},
-]
+],
 
-export const tblIncidentRelatedCase = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentRelatedCase: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'RelatedCase', field:'RelatedCase', label:'RelatedCase', width:200},  
-]
+],
 
-export const tblIncidentRoute = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentRoute: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'DateRouted', field:'DateRouted', label:'DateRouted', width:200},
@@ -1248,10 +1200,9 @@ export const tblIncidentRoute = [
     {value:'ClearedByID', field:'ClearedByID', label:'ClearedByID', width:200},
     {value:'ClearedBySSN', field:'ClearedBySSN', label:'ClearedBySSN', width:200},
     {value:'ClearedByName', field:'ClearedByName', label:'ClearedByName', width:200}, 
-]
+],
 
-export const tblIncidentSearch = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentSearch: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SearchName', field:'SearchName', label:'SearchName', width:200},
     {value:'DateCreated', field:'DateCreated', label:'DateCreated', width:200},
@@ -1262,18 +1213,16 @@ export const tblIncidentSearch = [
     {value:'LastUpdatedTime', field:'LastUpdatedTime', label:'LastUpdatedTime', width:200},
     {value:'LastUpdatedBy', field:'LastUpdatedBy', label:'LastUpdatedBy', width:200},
     {value:'LastUpdatedBySSN', field:'LastUpdatedBySSN', label:'LastUpdatedBySSN', width:200},
-]
+],
 
-export const tblIncidentSearchCriteria = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentSearchCriteria: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'Criteria', field:'Criteria', label:'Criteria', width:200},
     {value:'CriteriaAlias', field:'CriteriaAlias', label:'CriteriaAlias', width:200},
-]
+],
 
-export const tblIncidentSolvability = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentSolvability: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
@@ -1282,40 +1231,36 @@ export const tblIncidentSolvability = [
     {value:'PointValue', field:'PointValue', label:'PointValue', width:200}, 
     {value:'Answer', field:'Answer', label:'Answer', width:200},
     {value:'Points', field:'Points', label:'Points', width:200},
-]
+],
 
-export const tblIncidentSynchronize = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentSynchronize: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'IncidentNumber', field:'IncidentNumber', label:'IncidentNumber', width:200},
     {value:'TableName', field:'TableName', label:'TableName', width:200},
     {value:'RecordKeyDesktop', field:'RecordKeyDesktop', label:'RecordKeyDesktop', width:200},
     {value:'EditType', field:'EditType', label:'EditType', width:200}, 
     {value:'ForeignKeyMobile', field:'ForeignKeyMobile', label:'ForeignKeyMobile', width:200},
-]
+],
 
-export const tblIncidentVictimAssaultCircumstance = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentVictimAssaultCircumstance: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'AssaultCircumstance', field:'AssaultCircumstance', label:'AssaultCircumstance', width:200}, 
-]
+],
 
-export const tblIncidentVictimInjury = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentVictimInjury: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'Injury', field:'Injury', label:'Injury', width:200}, 
-]
+],
 
-export const tblIncidentVictimOffender = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentVictimOffender: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -1323,20 +1268,18 @@ export const tblIncidentVictimOffender = [
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'OffenderNumber', field:'OffenderNumber', label:'OffenderNumber', width:200}, 
     {value:'Relationship', field:'Relationship', label:'Relationship', width:200}, 
-]
+],
 
-export const tblIncidentVictimRelatedOffense = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentVictimRelatedOffense: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'SupplementNumber', field:'SupplementNumber', label:'SupplementNumber', width:200},
     {value:'RelatedOffense', field:'RelatedOffense', label:'RelatedOffense', width:200}, 
-]
+],
 
-export const tblIncidentVictimStatement = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblIncidentVictimStatement: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'SynchronizePrimaryKey', field:'SynchronizePrimaryKey', label:'SynchronizePrimaryKey', width:200},
     {value:'ForeignKey', field:'ForeignKey', label:'ForeignKey', width:200},
@@ -1349,10 +1292,9 @@ export const tblIncidentVictimStatement = [
     {value:'OfficerSSN', field:'OfficerSSN', label:'OfficerSSN', width:200},
     {value:'Location', field:'Location', label:'Location', width:200}, 
     {value:'Statement', field:'Statement', label:'Statement', width:200}, 
-]
+],
 
-export const tblLocking = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblLocking: [
     {value:'Category', field:'Category', label:'Category', width:200},
     {value:'Resource', field:'Resource', label:'Resource', width:200},
     {value:'Operation', field:'Operation', label:'Operation', width:200},
@@ -1360,23 +1302,22 @@ export const tblLocking = [
     {value:'MachineName', field:'MachineName', label:'MachineName', width:200},
     {value:'DateLocked', field:'DateLocked', label:'DateLocked', width:200}, 
     {value:'TimeLocked', field:'TimeLocked', label:'TimeLocked', width:200}, 
-]
+],
 
-export const tblUCRArrest_194 = [
+tblUCRArrest_194: [
     {value:'OCANumber', field:'OCANumber', label:'OCANumber', width:200},
     {value:'CreateIncident', field:'CreateIncident', label:'CreateIncident', width:200},
     {value:'DateCreated', field:'DateCreated', label:'DateCreated', width:200},
     {value:'TimeCreated', field:'TimeCreated', label:'TimeCreated', width:200},
     {value:'CreatedSource', field:'CreatedSource', label:'CreatedSource', width:200},
-]
+],
 
-export const tblVersion = [
-    {value:'TimeStampIndex', field:'TimeStampIndex', label:'TimeStampIndex', width:200},
+tblVersion: [
     {value:'ConnectionName', field:'ConnectionName', label:'ConnectionName', width:200},
     {value:'VersionNumber', field:'VersionNumber', label:'VersionNumber', width:200},
-]
+],
 
-export const z_mirror_tblIncident_194 = [
+z_mirror_tblIncident_194: [
     {value:'OCANumber', field:'OCANumber', label:'OCANumber', width:200},
     {value:'CaseStatus', field:'CaseStatus', label:'CaseStatus', width:200},
     {value:'CaseDisposition', field:'CaseDisposition', label:'CaseDisposition', width:200},
@@ -1395,9 +1336,9 @@ export const z_mirror_tblIncident_194 = [
     {value:'RecoveryLocation', field:'RecoveryLocation', label:'RecoveryLocation', width:200},
     {value:'GovernmentCode', field:'GovernmentCode', label:'GovernmentCode', width:200},
     {value:'Validated', field:'Validated', label:'Validated', width:200},
-]
+],
 
-export const z_mirror_tblIncidentDrug_194 = [
+z_mirror_tblIncidentDrug_194: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'OCANumber', field:'OCANumber', label:'OCANumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
@@ -1406,9 +1347,9 @@ export const z_mirror_tblIncidentDrug_194 = [
     {value:'UnitOfMeasure', field:'UnitOfMeasure', label:'UnitOfMeasure', width:200},
     {value:'Activity', field:'Activity', label:'Activity', width:200},
     {value:'Quantity', field:'Quantity', label:'Quantity', width:200},
-]
+],
 
-export const z_mirror_tblIncidentOffender_194 = [
+z_mirror_tblIncidentOffender_194: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'OCANumber', field:'OCANumber', label:'OCANumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
@@ -1416,9 +1357,9 @@ export const z_mirror_tblIncidentOffender_194 = [
     {value:'ArrestJurisdiction', field:'ArrestJurisdiction', label:'ArrestJurisdiction', width:200},
     {value:'Ethnicity', field:'Ethnicity', label:'Ethnicity', width:200},
     {value:'Age', field:'Age', label:'Age', width:200},
-]
+],
 
-export const z_mirror_tblIncidentOffense_194 = [
+z_mirror_tblIncidentOffense_194: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'OCANumber', field:'OCANumber', label:'OCANumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
@@ -1428,9 +1369,9 @@ export const z_mirror_tblIncidentOffense_194 = [
     {value:'BiasLocation', field:'BiasLocation', label:'BiasLocation', width:200},
     {value:'BiasType', field:'BiasType', label:'BiasType', width:200},
     {value:'BiasMotivatedOther', field:'BiasMotivatedOther', label:'BiasMotivatedOther', width:200},
-]
+],
 
-export const z_mirror_tblIncidentProperty_194 = [
+z_mirror_tblIncidentProperty_194: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'OCANumber', field:'OCANumber', label:'OCANumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
@@ -1439,17 +1380,17 @@ export const z_mirror_tblIncidentProperty_194 = [
     {value:'Status', field:'Status', label:'Status', width:200},
     {value:'VehicleType', field:'VehicleType', label:'VehicleType', width:200},
     {value:'RecoveryCode', field:'RecoveryCode', label:'RecoveryCode', width:200},
-]
+],
 
-export const z_mirror_tblIncidentSupplement_194 = [
+z_mirror_tblIncidentSupplement_194: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'OCANumber', field:'OCANumber', label:'OCANumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
     {value:'CaseStatus', field:'CaseStatus', label:'CaseStatus', width:200},
     {value:'CaseDisposition', field:'CaseDisposition', label:'CaseDisposition', width:200},
-]
+],
 
-export const z_mirror_tblIncidentVictim_194 = [
+z_mirror_tblIncidentVictim_194: [
     {value:'PrimaryKey', field:'PrimaryKey', label:'PrimaryKey', width:200},
     {value:'OCANumber', field:'OCANumber', label:'OCANumber', width:200},
     {value:'SequenceNumber', field:'SequenceNumber', label:'SequenceNumber', width:200},
@@ -1463,4 +1404,5 @@ export const z_mirror_tblIncidentVictim_194 = [
     {value:'LEOKAIncidentType', field:'LEOKAIncidentType', label:'LEOKAIncidentType', width:200},
     {value:'LEOKAAssignment', field:'LEOKAAssignment', label:'LEOKAAssignment', width:200},
     {value:'LEOKAWeaponType', field:'LEOKAWeaponType', label:'LEOKAWeaponType', width:200},
-]
+],
+}

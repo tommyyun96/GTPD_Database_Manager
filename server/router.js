@@ -59,14 +59,13 @@ function add_router(app) {
         });
     });
 
-    app.get('/RMSIncident', function (req, res) {
-        queryString = query_factory.RMSIncident();
+    app.post('/get-incident-data', function (req, res) {
+        queryString = query_factory.get_incident_data(req.body)
         console.log(queryString)
         db_query(queryString, (err, result) => {
-            if (!err) {
-                res.send(result);
-            }
+            if (!err) res.send(result);
             else {
+                console.log(err)
                 res.status(400).send(err);
             }
         });

@@ -20,8 +20,8 @@ class MainLayout extends Component {
                                     <Route exact path="/">
                                         <Data />
                                     </Route>
-                                    <Route exact path="/RMS/Incident/Incident" component={IncidentData}/>
-                                    <Route exact path="/CustomColumn/:data" component={CustomColumn}/>
+                                    <Route exact path="/RMS/Incident/:table" component={IncidentData}/>
+                                    <Route exact path="/RMS/Incident/CustomColumn/:table" component={CustomColumn}/>
                                     <Route exact path="/edit">
                                         {/*<TableEditablePage />*/}   {/*Actually, this won't work since we need to buy license.*/}
                                     </Route>    

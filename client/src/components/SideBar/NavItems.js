@@ -100,7 +100,7 @@ export const RMSNav = [
         content: [
             {
                 label: 'Incident',
-                to: '/RMS/Incident/Incident'
+                to: '/RMS/Incident/tblIncident'
             },
             {
                 label: 'Arrest',
