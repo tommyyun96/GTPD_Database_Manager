@@ -35,7 +35,7 @@ export default class Nav extends Component {
                     return(
                         {
                             label: table,
-                            to: '/tables/'+database[0]+'/'+table
+                            to: '/tables/'+database[0]+'/'+table,
                         }
                     )
                 })

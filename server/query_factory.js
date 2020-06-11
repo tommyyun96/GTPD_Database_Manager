@@ -33,7 +33,6 @@ module.exports.showall = function(additional_join_statement=null, criteria=null,
 
 
 module.exports.get_incident_data = function(body) {
-    console.log(body)
     var order =''
     table = body.tableName
     noTimeStamp = [
@@ -51,11 +50,21 @@ module.exports.get_incident_data = function(body) {
     if(!noTimeStamp.includes(table)) {
         order = 'order by [TimeStampIndex] desc'
     }
+    top = 'TOP (1000)'
+    if(body.top) {
+        if(body.top.value == 'All') {
+            top = 'ALL'
+        } else {
+            top = 'TOP ('+body.top.value+')'
+        }
+    }
+
 
     return sprintf('\
-    SELECT TOP (1000) *\
+    SELECT \%s *\
       FROM [SS_GARecords_Incident].[dbo].[\%s]\n\
       \%s',
+      top,
       table,
       order
     )

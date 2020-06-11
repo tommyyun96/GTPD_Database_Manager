@@ -6,33 +6,37 @@ import {columnOptions} from '../Columns'
 
 
 var columns = []
+const countOptions = [
+    {value: '1000', label: '1000'},
+    {value: '2500', label: '2500'},
+    {value: '5000', label: '5000'},
+    {value: '10000', label: '10000'},
+    {value: 'All', label: 'All'},
+];
 
 
-class CustomColumn extends Component {
+class Edit extends Component {
     state = {
         selectedColumns: [],
         pathname: null,
+        selectedCount: {value: '1000', label: '1000'},
     };
 
 
 
-    setCustom = selectedCustom => {
-        this.setState({selectedCustom},
-            function() {
-            }); 
-    }
     setColumns = selectedColumns => {
         this.setState({selectedColumns},
             function() {
             }); 
     }
+    setCount = selectedCount => { 
+        this.setState({selectedCount})
+    };
 
     componentDidMount() {
         var {table} = this.props.match.params;
         columns = columnOptions[table]
         this.setState({selectedColumns: columnOptions[table].slice(0,10), pathname: '/RMS/Incident/'+table})
-
-
     }
     handleSubmit = () => {
         this.setState({redirected: true})
@@ -41,12 +45,13 @@ class CustomColumn extends Component {
     render() {
         return(
             <div className="main">
-                {this.state.redirected ? <Redirect to={{pathname: this.state.pathname, state: {columns: this.state.selectedColumns}}}/> : null}
+                {this.state.redirected ? <Redirect to={{pathname: this.state.pathname, state: {columns: this.state.selectedColumns, top:this.state.selectedCount}}}/> : null}
                 <div className="card filterTypeCards dateCard">
-                    <h4 className="card-header">Custom Columns</h4>
                     <div className="card-body">
                         <div className="col-12 dateFilters">
-                            Test
+                        <label className="col-12 col-form-label" style={{fontSize: 13}}>
+                            Columns
+                        </label>
                             <div>
                                 <Select 
                                 value={this.state.selectedColumns} 
@@ -55,6 +60,16 @@ class CustomColumn extends Component {
                                 isMulti={true}
                                 />
                             </div>
+                        </div>
+                        <label className="col-12 col-form-label" style={{fontSize: 13}}>
+                            Number of Incidents
+                        </label>
+                        <div>
+                            <Select 
+                            value={this.state.selectedCount} 
+                            onChange={this.setCount} 
+                            options={countOptions} 
+                            />
                         </div>
                     </div>
                     <div className="searchButton">
@@ -67,4 +82,4 @@ class CustomColumn extends Component {
         )
     }
 }
-export default CustomColumn;
+export default Edit;

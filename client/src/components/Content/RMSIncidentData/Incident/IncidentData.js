@@ -15,6 +15,7 @@ export default class Data extends Component {
             },
             tableName: null,
             columns: null,
+            top: null,
         }
     }
 
@@ -53,7 +54,11 @@ export default class Data extends Component {
     componentDidMount() {
         var {table} = this.props.match.params;
         if(this.props.location.state) {
-            this.setState({columns:this.props.location.state.columns, tableName: table},
+            this.setState({
+                columns: this.props.location.state.columns, 
+                tableName: table,
+                top: this.props.location.state.top
+            },
                 function(){
                     this.getData()
                 })
@@ -92,7 +97,7 @@ export default class Data extends Component {
                 <div className="row">
                     <div className="col-12">
                         <button style={{marginLeft:'20px', marginTop:'20px', fontSize:'120%'}}className="btn btn-lg btn-primary"> 
-                            <a style={{color:'white'}}href={"/RMS/Incident/CustomColumn/"+this.state.tableName}>Change Columns</a>
+                            <a style={{color:'white'}}href={"/RMS/Incident/Edit/"+this.state.tableName}>Edit</a>
                         </button>
                     </div>
                 </div>
