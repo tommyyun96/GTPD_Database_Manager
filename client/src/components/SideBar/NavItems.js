@@ -99,7 +99,6 @@ export const RMSNav = [
         label: 'SS_GARecords_Incident',
         content: [
             {label:'CleryCategories', to:'/RMS/Incident/CleryCategories'},
-            {label:'dtproperties', to:'/RMS/Incident/dtproperties'},
             {label:'NIBRSTranslationCodes', to:'/RMS/Incident/NIBRSTranslationCodes'},
             {label:'tblConversionTimeStamp', to:'/RMS/Incident/tblConversionTimeStamp'},
             {label:'tblIBRArrestDelete', to:'/RMS/Incident/tblIBRArrestDelete'},
