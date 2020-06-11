@@ -53,6 +53,12 @@ export default class Data extends Component {
                     this.makeColumns(data)
             })})
             .catch(err => console.error(err))
+        fetch('/getTables')
+            .then(results => {
+                results.json().then(data => {
+                    this.makeTables(data)
+            })})
+            .catch(err => console.error(err))
     }
 
     makeColumns(data) {
@@ -60,6 +66,13 @@ export default class Data extends Component {
         var script = ''
         for(var i = 0; i<columns.length; i++) {
             script += "{value:'"+columns[i]+"', field:'"+columns[i]+"', label:'"+columns[i]+"', width:200},\n"
+        }
+        console.log(script)
+    }
+    makeTables(data) {
+        var script = ''
+        for(var i = 0; i<data.length; i++) {
+            script += "{label:'"+data[i]['TABLE_NAME']+"', to:'/RMS/Incident/"+data[i]['TABLE_NAME']+"'},\n"
         }
         console.log(script)
     }

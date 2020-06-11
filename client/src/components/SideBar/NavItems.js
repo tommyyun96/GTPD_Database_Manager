@@ -98,54 +98,81 @@ export const RMSNav = [
         icon: 'fas fa-scroll',
         label: 'SS_GARecords_Incident',
         content: [
-            {
-                label: 'Incident',
-                to: '/RMS/Incident/tblIncident'
-            },
-            {
-                label: 'Arrest',
-                to: '/RMS/Incident/Arrest'
-            },
-            {
-                label: 'Drug',
-                to: '/RMS/Incident/Drug'
-            },
-            {
-                label: 'MO',
-                to: '/RMS/Incident/MO'
-            },
-            {
-                label: 'Offender',
-                to: '/RMS/Incident/Offender'
-            },
-            {
-                label: 'Offense',
-                to: '/RMS/Incident/Offense'
-            },
-            {
-                label: 'OffenseOffenderUsed',
-                to: '/RMS/Incident/OffenseOffenderUsed'
-            },
-            {
-                label: 'OffenseWeapon',
-                to: '/RMS/Incident/OffenseWeapon'
-            },
-            {
-                label: 'OthersInvolved',
-                to: '/RMS/Incident/OthersInvolved'
-            },
-            {
-                label: 'Property',
-                to: '/RMS/Incident/Property'
-            },
-            {
-                label: 'Supplement',
-                to: '/RMS/Incident/Supplement'
-            },
-            {
-                label: 'Victim',
-                to: '/RMS/Incident/Victim'
-            },
+            {label:'CleryCategories', to:'/RMS/Incident/CleryCategories'},
+            {label:'dtproperties', to:'/RMS/Incident/dtproperties'},
+            {label:'NIBRSTranslationCodes', to:'/RMS/Incident/NIBRSTranslationCodes'},
+            {label:'tblConversionTimeStamp', to:'/RMS/Incident/tblConversionTimeStamp'},
+            {label:'tblIBRArrestDelete', to:'/RMS/Incident/tblIBRArrestDelete'},
+            {label:'tblIBRArrestDeleteSubmission', to:'/RMS/Incident/tblIBRArrestDeleteSubmission'},
+            {label:'tblIBRIncidentDelete', to:'/RMS/Incident/tblIBRIncidentDelete'},
+            {label:'tblIBRIncidentDeleteSubmission', to:'/RMS/Incident/tblIBRIncidentDeleteSubmission'},
+            {label:'tblIBRIncidentLocked', to:'/RMS/Incident/tblIBRIncidentLocked'},
+            {label:'tblIBRSubmission', to:'/RMS/Incident/tblIBRSubmission'},
+            {label:'tblIncident', to:'/RMS/Incident/tblIncident'},
+            {label:'tblIncidentApprovalLog', to:'/RMS/Incident/tblIncidentApprovalLog'},
+            {label:'tblIncidentApprovalLogMerge', to:'/RMS/Incident/tblIncidentApprovalLogMerge'},
+            {label:'tblIncidentArrest', to:'/RMS/Incident/tblIncidentArrest'},
+            {label:'tblIncidentArrestAlias', to:'/RMS/Incident/tblIncidentArrestAlias'},
+            {label:'tblIncidentArrestAssistingOfficer', to:'/RMS/Incident/tblIncidentArrestAssistingOfficer'},
+            {label:'tblIncidentArrestDrug', to:'/RMS/Incident/tblIncidentArrestDrug'},
+            {label:'tblIncidentArrestOffense', to:'/RMS/Incident/tblIncidentArrestOffense'},
+            {label:'tblIncidentArrestPhysicalFeatures', to:'/RMS/Incident/tblIncidentArrestPhysicalFeatures'},
+            {label:'tblIncidentArrestProperty', to:'/RMS/Incident/tblIncidentArrestProperty'},
+            {label:'tblIncidentArrestRelatedCase', to:'/RMS/Incident/tblIncidentArrestRelatedCase'},
+            {label:'tblIncidentArrestStatement', to:'/RMS/Incident/tblIncidentArrestStatement'},
+            {label:'tblIncidentArrestWeapon', to:'/RMS/Incident/tblIncidentArrestWeapon'},
+            {label:'tblIncidentAssignment', to:'/RMS/Incident/tblIncidentAssignment'},
+            {label:'tblIncidentAssistingOfficer', to:'/RMS/Incident/tblIncidentAssistingOfficer'},
+            {label:'tblIncidentAuditTrailDelete', to:'/RMS/Incident/tblIncidentAuditTrailDelete'},
+            {label:'tblIncidentAuditTrailUpdate', to:'/RMS/Incident/tblIncidentAuditTrailUpdate'},
+            {label:'tblIncidentCaseNotes', to:'/RMS/Incident/tblIncidentCaseNotes'},
+            {label:'tblIncidentCaseNotesAuditTrail', to:'/RMS/Incident/tblIncidentCaseNotesAuditTrail'},
+            {label:'tblIncidentDrug', to:'/RMS/Incident/tblIncidentDrug'},
+            {label:'tblIncidentFVAbuseType', to:'/RMS/Incident/tblIncidentFVAbuseType'},
+            {label:'tblIncidentFVPoliceAction', to:'/RMS/Incident/tblIncidentFVPoliceAction'},
+            {label:'tblIncidentFVRelationshipToVictim', to:'/RMS/Incident/tblIncidentFVRelationshipToVictim'},
+            {label:'tblIncidentImage', to:'/RMS/Incident/tblIncidentImage'},
+            {label:'tblIncidentMergeLog', to:'/RMS/Incident/tblIncidentMergeLog'},
+            {label:'tblIncidentMO', to:'/RMS/Incident/tblIncidentMO'},
+            {label:'tblIncidentOffender', to:'/RMS/Incident/tblIncidentOffender'},
+            {label:'tblIncidentOffenderAlias', to:'/RMS/Incident/tblIncidentOffenderAlias'},
+            {label:'tblIncidentOffenderPhysicalFeatures', to:'/RMS/Incident/tblIncidentOffenderPhysicalFeatures'},
+            {label:'tblIncidentOffenderRelatedOffense', to:'/RMS/Incident/tblIncidentOffenderRelatedOffense'},
+            {label:'tblIncidentOffenderStatement', to:'/RMS/Incident/tblIncidentOffenderStatement'},
+            {label:'tblIncidentOffense', to:'/RMS/Incident/tblIncidentOffense'},
+            {label:'tblIncidentOffenseBiasMotivated', to:'/RMS/Incident/tblIncidentOffenseBiasMotivated'},
+            {label:'tblIncidentOffenseCriminalActivity', to:'/RMS/Incident/tblIncidentOffenseCriminalActivity'},
+            {label:'tblIncidentOffenseGangActivity', to:'/RMS/Incident/tblIncidentOffenseGangActivity'},
+            {label:'tblIncidentOffenseOffenderUsed', to:'/RMS/Incident/tblIncidentOffenseOffenderUsed'},
+            {label:'tblIncidentOffenseWeapon', to:'/RMS/Incident/tblIncidentOffenseWeapon'},
+            {label:'tblIncidentOthersInvolved', to:'/RMS/Incident/tblIncidentOthersInvolved'},
+            {label:'tblIncidentOthersInvolvedStatement', to:'/RMS/Incident/tblIncidentOthersInvolvedStatement'},
+            {label:'tblIncidentProperty', to:'/RMS/Incident/tblIncidentProperty'},
+            {label:'tblIncidentRecentlyUsed', to:'/RMS/Incident/tblIncidentRecentlyUsed'},
+            {label:'tblIncidentRelatedCase', to:'/RMS/Incident/tblIncidentRelatedCase'},
+            {label:'tblIncidentRoute', to:'/RMS/Incident/tblIncidentRoute'},
+            {label:'tblIncidentRoutePending', to:'/RMS/Incident/tblIncidentRoutePending'},
+            {label:'tblIncidentSearch', to:'/RMS/Incident/tblIncidentSearch'},
+            {label:'tblIncidentSearchCriteria', to:'/RMS/Incident/tblIncidentSearchCriteria'},
+            {label:'tblIncidentSolvability', to:'/RMS/Incident/tblIncidentSolvability'},
+            {label:'tblIncidentSupplement', to:'/RMS/Incident/tblIncidentSupplement'},
+            {label:'tblIncidentSynchronize', to:'/RMS/Incident/tblIncidentSynchronize'},
+            {label:'tblIncidentVictim', to:'/RMS/Incident/tblIncidentVictim'},
+            {label:'tblIncidentVictimAssaultCircumstance', to:'/RMS/Incident/tblIncidentVictimAssaultCircumstance'},
+            {label:'tblIncidentVictimInjury', to:'/RMS/Incident/tblIncidentVictimInjury'},
+            {label:'tblIncidentVictimOffender', to:'/RMS/Incident/tblIncidentVictimOffender'},
+            {label:'tblIncidentVictimRelatedOffense', to:'/RMS/Incident/tblIncidentVictimRelatedOffense'},
+            {label:'tblIncidentVictimStatement', to:'/RMS/Incident/tblIncidentVictimStatement'},
+            {label:'tblLocking', to:'/RMS/Incident/tblLocking'},
+            {label:'tblUCRArrest_194', to:'/RMS/Incident/tblUCRArrest_194'},
+            {label:'tblVersion', to:'/RMS/Incident/tblVersion'},
+            {label:'z_mirror_tblIncident_194', to:'/RMS/Incident/z_mirror_tblIncident_194'},
+            {label:'z_mirror_tblIncidentDrug_194', to:'/RMS/Incident/z_mirror_tblIncidentDrug_194'},
+            {label:'z_mirror_tblIncidentOffender_194', to:'/RMS/Incident/z_mirror_tblIncidentOffender_194'},
+            {label:'z_mirror_tblIncidentOffense_194', to:'/RMS/Incident/z_mirror_tblIncidentOffense_194'},
+            {label:'z_mirror_tblIncidentProperty_194', to:'/RMS/Incident/z_mirror_tblIncidentProperty_194'},
+            {label:'z_mirror_tblIncidentSupplement_194', to:'/RMS/Incident/z_mirror_tblIncidentSupplement_194'},
+            {label:'z_mirror_tblIncidentVictim_194', to:'/RMS/Incident/z_mirror_tblIncidentVictim_194'},
         ]
     },
 ];

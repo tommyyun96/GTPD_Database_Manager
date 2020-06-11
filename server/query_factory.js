@@ -64,6 +64,9 @@ module.exports.get_incident_data = function(body) {
 
 
 module.exports.getColumns = function() {
-    return '\
-	select top (1) * FROM [SS_GARecords_Incident].[dbo].[z_mirror_tblIncidentVictim_194]'
+    return 'select top (1) * FROM [SS_GARecords_Incident].[dbo].[z_mirror_tblIncidentVictim_194]'
+}
+
+module.exports.getTables = function() {
+    return 'SELECT [TABLE_NAME] FROM [SS_GARecords_Incident].INFORMATION_SCHEMA.TABLES where TABLE_TYPE = \'BASE TABLE\' order by TABLE_NAME'
 }
