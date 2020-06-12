@@ -3,7 +3,7 @@ import Header from '../components/Header/Header'
 import SideBar from '../components/SideBar/SideBar'
 import Data from '../components/Content/DefaultData/Data'
 import IncidentData from '../components/Content/RMSIncidentData/Incident/IncidentData'
-import Edit from '../components/Content/RMSIncidentData/Incident/Edit'
+import EditView from '../components/Content/RMSIncidentData/Incident/EditView'
 import { Switch, Route } from 'react-router-dom'
 
 class MainLayout extends Component {
@@ -21,7 +21,7 @@ class MainLayout extends Component {
                                         <Data />
                                     </Route>
                                     <Route exact path="/RMS/Incident/:table" component={IncidentData}/>
-                                    <Route exact path="/RMS/Incident/Edit/:table" component={Edit}/>
+                                    <Route exact path="/RMS/Incident/EditView/:table" component={EditView}/>
                                     <Route exact path="/edit">
                                         {/*<TableEditablePage />*/}   {/*Actually, this won't work since we need to buy license.*/}
                                     </Route>    

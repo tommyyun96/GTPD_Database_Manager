@@ -1,0 +1,26 @@
+.metismenu-link {
+    font-size: 14px;
+}
+
+.app-sidebar__inner {
+    width: 340px;
+}
+:root {
+    --sidebar_width:340px;
+}
+
+.app-sidebar {
+    width: 340px;
+}
+
+.app-sidebar .app-sidebar__inner {
+    padding: 2px 0.5rem 1.5rem;
+}
+
+.app-sidebar .app-sidebar__heading {
+    padding-left: 1.5rem;
+}
+
+.app-header .app-title {
+    padding-left: 40px;
+}

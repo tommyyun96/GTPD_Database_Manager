@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import MetisMenu from 'react-metismenu';
+import './Style.css'
 
 import {ViewNav, TableNav, ProgramNav, CANav, RMSNav, ArchiveNav} from './NavItems';
 
@@ -44,7 +45,6 @@ export default class Nav extends Component {
     }
 
     render() {
-        console.log(this.state.table);
         return (
             <Fragment>
                 <h5 className="app-sidebar__heading">RMS</h5>

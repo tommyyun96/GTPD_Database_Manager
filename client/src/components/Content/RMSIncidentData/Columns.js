@@ -42,7 +42,6 @@ export const columnOptions= {
     {value: 'LocationStreet', field:'LocationStreet', label: 'LocationStreet', width: 200},
     {value: 'LocationLocation', field:'LocationLocation', label: 'LocationLocation', width: 200},
     {value: 'LocationMailingAddress', field:'LocationMailingAddress', label: 'LocationMailingAddress', width: 200},
-    {value: 'LocationMailingAddress', field:'LocationMailingAddress', label: 'LocationMailingAddress', width: 200},
     {value: 'LocationState', field:'LocationState', label: 'LocationState', width: 150},
     {value: 'LocationZipCode', field:'LocationZipCode', label: 'LocationZipCode', width: 150},
     {value: 'LocationLatitude', field:'LocationLatitude', label: 'LocationLatitude', width: 200},

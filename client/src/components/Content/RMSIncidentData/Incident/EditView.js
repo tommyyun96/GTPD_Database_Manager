@@ -15,7 +15,7 @@ const countOptions = [
 ];
 
 
-class Edit extends Component {
+class EditView extends Component {
     state = {
         selectedColumns: [],
         pathname: null,
@@ -82,4 +82,4 @@ class Edit extends Component {
         )
     }
 }
-export default Edit;
+export default EditView;

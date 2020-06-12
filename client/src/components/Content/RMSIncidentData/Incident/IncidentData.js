@@ -3,7 +3,6 @@ import {MDBDataTable} from 'mdbreact'
 import {columnOptions} from '../Columns'
 
 
-
 export default class Data extends Component {
     
     constructor(props) {
@@ -97,15 +96,11 @@ export default class Data extends Component {
                 <div className="row">
                     <div className="col-12">
                         <button style={{marginLeft:'20px', marginTop:'20px', fontSize:'120%'}}className="btn btn-lg btn-primary"> 
-                            <a style={{color:'white'}}href={"/RMS/Incident/Edit/"+this.state.tableName}>Edit</a>
+                            <a style={{color:'white'}}href={"/RMS/Incident/EditView/"+this.state.tableName}>Edit View</a>
                         </button>
                     </div>
                 </div>
                 <div className="card-body"style={{marginBottom:30, fontSize: 12}}>
-                {/* <MDBTable autoWidth striped scrollX entries={20}>
-                    <MDBTableHead columns={this.state.crimeData.columns} />
-                    <MDBTableBody rows={this.state.crimeData.rows} />
-                </MDBTable> */}
                     <MDBDataTable 
                         scrollX
                         striped
