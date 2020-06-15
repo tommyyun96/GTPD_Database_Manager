@@ -74,7 +74,7 @@ export default class Data extends Component {
         for(var i = 0; i<data.length; i++) {
             script += "{label:'"+data[i]['TABLE_NAME']+"', to:'/RMS/Incident/"+data[i]['TABLE_NAME']+"'},\n"
         }
-        console.log(script)
+        // console.log(script)
     }
 
     render() {

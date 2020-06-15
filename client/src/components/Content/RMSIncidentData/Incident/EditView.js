@@ -62,7 +62,7 @@ class EditView extends Component {
                             </div>
                         </div>
                         <label className="col-12 col-form-label" style={{fontSize: 13}}>
-                            Number of Incidents
+                            Number of Results
                         </label>
                         <div>
                             <Select 
