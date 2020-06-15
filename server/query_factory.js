@@ -45,7 +45,26 @@ module.exports.get_incident_data = function(body) {
         'z_mirror_tblIncidentOffense_194',
         'z_mirror_tblIncidentProperty_194',
         'z_mirror_tblIncidentSupplement_194',
-        'z_mirror_tblIncidentVictim_194'
+        'z_mirror_tblIncidentVictim_194',
+        //view tables
+        'ARPComplainant',
+        'ARPDrugs',
+        'ARPIncidentNew',
+        'ARPLandingNew',
+        'ARPOffender',
+        'ARPOffense',
+        'ARPProperty',
+        'ARPRelatedIncidentOffender',
+        'ARPRelatedIncidentOffense',
+        'ARPRelatedOffense',
+        'ARPSupplement',
+        'ARPVictim',
+        'ARPWitness',
+        'CrimeLogTXT',
+        'CrimeReportOffenseTypes',
+        'Incident',
+        'NonCrimeLog',
+        'WebIncidents',
     ]
     if(!noTimeStamp.includes(table)) {
         order = 'order by [TimeStampIndex] desc'
