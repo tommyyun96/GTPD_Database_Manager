@@ -1,6 +1,8 @@
-import sys 
-# Takes first name and last name via command  
-# line arguments and then display them 
-print("Output from Python") 
-print("First name: " + sys.argv[1]) 
-print("Last name: " + sys.argv[2]) 
+import pandas as pd
+from pandas import ExcelWriter
+from pandas import ExcelFile
+
+df = pd.read_excel('filePath', sheetname='APD Off')
+
+print("Column headings:")
+print(df.columns)
