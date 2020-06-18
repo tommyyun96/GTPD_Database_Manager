@@ -4,6 +4,8 @@ var config = require('./db_config')
 const read = require('read')
 const { exec } = require('child_process')
 const fs = require('fs');
+let {PythonShell} = require('python-shell')
+
 
 
 // Contains methods for generating common query.
@@ -105,6 +107,22 @@ function add_router(app) {
         setTimeout(()=>{res.json(selected_tables)}, 2000)
         //res.json(selected_tables);
     });
+
+    app.get('/python', (req, res) => {
+
+
+        PythonShell.run('./python/script1.py',{ args: ['Hello', 'yes']}, function (err, results) {
+            if (err) throw err;
+            // results is an array consisting of messages collected during execution
+            console.log('results: %j', results);
+        })
+ 
+
+
+
+
+    })
+    
 }
 
 

@@ -4,6 +4,7 @@ import {MDBDataTable} from 'mdbreact'
 import {Link} from 'react-router-dom'
 
 
+
 export default class Data extends Component {
     
     constructor(props) {
@@ -38,6 +39,13 @@ export default class Data extends Component {
 
     componentDidMount() {
         this.getData();
+        fetch('/python')
+        .then(results => {
+            console.log(results)
+
+        })
+        .catch(err => console.error(err))
+
     }
 
     getData() {
