@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react'
 import Header from '../components/Header/Header'
 import SideBar from '../components/SideBar/SideBar'
+import APDUpload from '../components/Content/APD/Upload'
 import Data from '../components/Content/DefaultData/Data'
 import IncidentData from '../components/Content/RMSIncidentData/Incident/IncidentData'
 import EditView from '../components/Content/RMSIncidentData/Incident/EditView'
@@ -22,6 +23,7 @@ class MainLayout extends Component {
                                     </Route>
                                     <Route exact path="/RMS/Incident/:table" component={IncidentData}/>
                                     <Route exact path="/RMS/Incident/EditView/:table" component={EditView}/>
+                                    <Route exact path="/progs/Import_APD" component={APDUpload}/>
                                     <Route exact path="/edit">
                                         {/*<TableEditablePage />*/}   {/*Actually, this won't work since we need to buy license.*/}
                                     </Route>    

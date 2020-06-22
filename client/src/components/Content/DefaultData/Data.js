@@ -39,12 +39,6 @@ export default class Data extends Component {
 
     componentDidMount() {
         this.getData();
-        fetch('/python')
-        .then(results => {
-            console.log(results)
-
-        })
-        .catch(err => console.error(err))
 
     }
 

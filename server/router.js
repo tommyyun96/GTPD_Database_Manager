@@ -108,20 +108,18 @@ function add_router(app) {
         //res.json(selected_tables);
     });
 
-    app.get('/python', (req, res) => {
+    app.post('/python', function (req, res) {
+        console.log(req.body)
 
-
-        PythonShell.run('./python/script1.py',{ args: ['Hello', 'yes']}, function (err, results) {
+        PythonShell.run('./python/script1.py',{ args: [req.body]}, function (err, results) {
             if (err) throw err;
             // results is an array consisting of messages collected during execution
             console.log('results: %j', results);
         })
- 
-
-
-
 
     })
+    
+
     
 }
 
