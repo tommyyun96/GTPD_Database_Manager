@@ -1,82 +1,64 @@
 import React, { Component } from "react";
+import axios from 'axios'; 
 
 
 export default class APDUpload extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected_files: null,
-            log: ''
+            offenseSelectedFile: null,
         }
     }
 
-    fileChangeHandler = event => {
-        var files = event.target.files
-        this.setState({ selected_files: files })
-    }
 
-    submitFiles = () => {
-        this.setState({ log: '' })
-        this.submitSync(0)
-    }
-
-    submitSync = (i) => {
-        if (i >= this.state.selected_files.length) {
-            console.log('done')
-            this.setState({ log: this.state.log })
-            return
+    offenseOnChangeHandler=event=>{
+        console.log(event.target.files[0])
+        if(event.target.files[0].name==='GT2-Off.xls') {
+            this.setState({
+                offenseSelectedFile: event.target.files[0],
+                loaded: 0,
+              })
+        } else {
+            alert('Only "GT2-Off.xls" File May Be Selected')
         }
-        var fileReader = new FileReader()
-        fileReader.onloadend = (e) => {
-            fetch('/python',
-                {
-                    method: 'post',
-                    body: fileReader.result
-                }
-            )
-                .then(function (response) {
-                    console.log(response)
-                    return response
-                })
-                .then(results => {
-                    console.log('done until: ', i)
-                    results.text().then(data => {
-                        console.log(this.state.selected_files[i])
-                        this.state.log = this.state.log + this.state.selected_files[i].name + ':\n' + data + '\n\n'
-                        this.setState({ log: this.state.log })
-                        // this.submitSync(i + 1, mode)
-                    })
-                })
-                .catch(err => console.error(err))
+    }
+    offenseOnClickHandler = () => {
+        if(this.state.offenseSelectedFile) {
+            const data = new FormData()
+            data.append('file', this.state.offenseSelectedFile)
+            axios.post("/uploadOffense", data, { 
+               // receive two    parameter endpoint url ,form data
+           })
+           .then(res => { // then print response status
+            console.log(res.statusText)
+            alert("Uploaded Successfully")
+         })
+        } else {
+            alert("No File Selected")
         }
-
-
-        fileReader.readAsText(this.state.selected_files[i])
+        
     }
 
 
     render() {
         return (
             <div className="container">
-                <br />
-                <div className="row">
-                    <div className="col-md-10">
-                        <label>Upload APD</label>
-                        <div className="form-group files color">
-                            <input type="file" className="form-control" multiple onChange={this.fileChangeHandler}></input>
-                        </div>
-                        {this.state.selected_files ?
-                            <button type="button" className="btn btn-success btn-block" onClick={this.submitFiles}>Upload</button>
-                            :
-                            <button type="button" disabled className="btn btn-success btn-block">Upload</button>
-                        }
+                <div className='card'>
+                    <div className='card-header'>
+                        <b style={{fontSize:'25px'}}>APD Offense</b> <i>(GT2-Off.xls)</i>
+                    </div>
+                    <div className='card-body'>
+                        <input style={{marginBottom:'20px'}} type="file" name="file" onChange={this.offenseOnChangeHandler}/>
+                        <button type="button" className="btn btn-success btn-block" onClick={this.offenseOnClickHandler}>Upload</button> 
                     </div>
                 </div>
-                <br />
-                <div className="row">
-                    <div className="col-12">
-                        <label>Server Log</label>
-                        <div style={{ marginLeft: '50px', marginRight: '50px', whiteSpace: 'pre-wrap' }}>{this.state.log}</div>
+                <div className='card' style={{marginTop:'30px'}}>
+                    <div className='card-header'>
+                        <b style={{fontSize:'25px'}}>APD Arrest</b> <i>(GT2-Arr.xls)</i>
+                    </div>
+                    <div className='card-body'>
+                        <input style={{marginBottom:'20px'}} type="file" name="file" onChange={this.offenseOnChangeHandler}/>
+                        <button type="button" className="btn btn-success btn-block" onClick={this.offenseOnClickHandler}>Upload</button> 
                     </div>
                 </div>
             </div>
