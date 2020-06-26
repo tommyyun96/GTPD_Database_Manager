@@ -132,35 +132,88 @@ function add_router(app) {
       filename: function (req, file, cb) {
         cb(null,file.originalname )
       }
-  })
+    })
      
-  var upload = multer({ storage: storage }).single('file')
+    var upload = multer({ storage: storage }).single('file')
 
-
-
-    // router.post("/upload", {
-    //     upload(req, res, (err) => {
-    //        console.log("Request ---", req.body)
-    //        console.log("Request file ---", req.file)//Here you get file.
-    //        /*Now do where ever you want to do*/
-    //        if(!err) {
-    //           return res.send(200).end()
-    //        }
-    //     })
-    //  })
-     app.post('/uploadOffense',function(req, res) {
+    app.post('/uploadOffense',function(req, res) {
      
         upload(req, res, function (err) {
-               if (err instanceof multer.MulterError) {
-                   return res.status(500).json(err)
-               } else if (err) {
-                   console.log(err)
-                   return res.status(500).json(err)
-               }
-          return res.status(200).send(req.file)
-    
+            if (err instanceof multer.MulterError) {
+                return res.status(500).json(err)
+            } else if (err) {
+                return res.status(500).json(err)
+            }
+            PythonShell.run('./python/uploadOffense.py',{ args:[]}, function (err, results) {
+                if (err) throw err;
+                console.log('results: %j', results);
+                return res.status(200).send(req.file)
+            })
         })
-    
+    });
+
+    app.post('/uploadArrest',function(req, res) {
+     
+        upload(req, res, function (err) {
+            if (err instanceof multer.MulterError) {
+                return res.status(500).json(err)
+            } else if (err) {
+                return res.status(500).json(err)
+            }
+            PythonShell.run('./python/uploadArrest.py',{ args:[]}, function (err, results) {
+                if (err) throw err;
+                console.log('results: %j', results);
+                return res.status(200).send(req.file)
+            })
+        })
+    });
+
+    app.post('/uploadSuspect',function(req, res) {
+     
+        upload(req, res, function (err) {
+            if (err instanceof multer.MulterError) {
+                return res.status(500).json(err)
+            } else if (err) {
+                return res.status(500).json(err)
+            }
+            PythonShell.run('./python/uploadSuspect.py',{ args:[]}, function (err, results) {
+                if (err) throw err;
+                console.log('results: %j', results);
+                return res.status(200).send(req.file)
+            })
+        })
+    });
+
+    app.post('/uploadVictim',function(req, res) {
+     
+        upload(req, res, function (err) {
+            if (err instanceof multer.MulterError) {
+                return res.status(500).json(err)
+            } else if (err) {
+                return res.status(500).json(err)
+            }
+            PythonShell.run('./python/uploadVictim.py',{ args:[]}, function (err, results) {
+                if (err) throw err;
+                console.log('results: %j', results);
+                return res.status(200).send(req.file)
+            })
+        })
+    });
+
+    app.post('/uploadNarrative',function(req, res) {
+     
+        upload(req, res, function (err) {
+            if (err instanceof multer.MulterError) {
+                return res.status(500).json(err)
+            } else if (err) {
+                return res.status(500).json(err)
+            }
+            PythonShell.run('./python/uploadNarrative.py',{ args:[]}, function (err, results) {
+                if (err) throw err;
+                console.log('results: %j', results);
+                return res.status(200).send(req.file)
+            })
+        })
     });
     
 
