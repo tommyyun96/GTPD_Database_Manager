@@ -13,6 +13,4 @@ print("Arrest")
 #  from APD Import-Arrests into the final APD Arrests table.
 
 # Retrieve APD Arrest table
-# Check for duplicates
-# delete the duplicates
-# insert the new arrest into the apd arrest table
+# Use insert ... on duplicate key update
