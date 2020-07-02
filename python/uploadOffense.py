@@ -12,14 +12,13 @@ conn = pyodbc.connect('Driver={SQL Server};'
                       'Trusted_Connection=yes;')
 
 cursor = conn.cursor()
-# cursor.execute('SELECT * FROM [CrimeAnalytics].[dbo].[APD_Off]')
 
-# for row in cursor:
-#     print(row)
 
 
 filePath = './ExcelFiles/GT2-Off.xls'
-df = pd.read_excel(filePath, sheet_name='GT2-Off')
+with pd.ExcelFile(filePath) as xls:
+    for sheet_name in xls.sheet_names:
+        df = pd.read_excel(filePath, sheet_name=sheet_name)
 tableColumns = [
     'offense_id',
     'suffix',
@@ -72,14 +71,9 @@ VALUES\
 # df = df.replace(504, 'yes')
 # df = df.replace("893 PEACHTREE ST NE @BULLDOG", 'check')
 # df.replace(504, 'yes', inplace=True)
-
-
 # df['beat'][2] = 'Test'
 
 df = df.fillna('NULL')
-# print(df['beat'][1])
-# print(df['location'][4])
-# print(df['beat'][2])
 
 for index, row in df.iterrows():
     tempQuery='('
@@ -100,34 +94,12 @@ query = query[:-1]
 try:
     cursor.execute(query)
     conn.commit()
-    print("Check")
 except:
     print("Unexpected error:", sys.exc_info()[0])
 
-#Duplicate entries
-
-# for index, row in df.iterrows():
-#     if(index == 0):
-#         tempQuery='('
-#         for col in tableColumns:
-#             if(row[col] != row[col]):
-#                 tempQuery+='UUUUUUUUUUUUUUUUU, '
-#             elif(row[col] != row[col]):
-#                 tempQuery+='JFDSKLFJLSKDJSFL, '
-#             else:
-#                 tempQuery+=str(row[col])+', '
-#         tempQuery = tempQuery[:-2]
-#         tempQuery+=')'
-#         query+= tempQuery
-# print(query)
+#Duplicate entries, maybe set all of the entries as a primary key?
 
 
 
-# columns = df.columns
-
-# for i in columns:
-#     if(type(df[i][1]) == pd._libs.tslibs.timestamps.Timestamp):
-#         print("FKLDSJFLKDSJFLKSD")
-#     print(type(df[i][1]))
-
+# TO SAVE THE EDITED FILE
 # df.to_excel('./ExcelFiles/GT2-Off.xls', index=False)
