@@ -12,6 +12,8 @@ conn = pyodbc.connect('Driver={SQL Server};'
                       'Trusted_Connection=yes;')
 
 cursor = conn.cursor()
+# 
+# f=open("Log.txt", 'a')
 
 
 
@@ -19,24 +21,11 @@ filePath = './ExcelFiles/GT2-Off.xls'
 with pd.ExcelFile(filePath) as xls:
     for sheet_name in xls.sheet_names:
         df = pd.read_excel(filePath, sheet_name=sheet_name)
-tableColumns = [
-    'offense_id',
-    'Watch',
-    'rpt_date',
-    'suffix',
-    'ucr',
-    'beat',
-    'Code_Literal',
-    'last_name',
-    'first_name',
-    'race',
-    'sex',
-    'dob',
-    'Age',
-]
+tableColumns = df.columns.tolist()
+print(tableColumns)
+# f.close()
 
 query = "INSERT INTO [CrimeAnalytics].[dbo].[APD_Off] ([offense_id]\
-      ,[Watch]\
       ,[rpt_date]\
       ,[suffix]\
       ,[ucr]\
@@ -47,6 +36,7 @@ query = "INSERT INTO [CrimeAnalytics].[dbo].[APD_Off] ([offense_id]\
       ,[sex]\
       ,[dob]\
       ,[Age]\
+      ,[Watch]\
 VALUES\
 "
 
@@ -59,11 +49,15 @@ VALUES\
 # df['beat'][2] = 'Test'
 
 df = df.fillna('NULL')
+i = 0
 
 for index, row in df.iterrows():
     tempQuery='('
 
     for col in tableColumns:
+        # f.write(col+'\n')
+        # f.write(str(row[col])+'\n')
+
         if(row[col] == 'NULL'):
             tempQuery+='NULL, '
         elif(type(row[col]) == str or type(row[col]) == pd._libs.tslibs.timestamps.Timestamp):
@@ -74,7 +68,11 @@ for index, row in df.iterrows():
     tempQuery+='),'
     query+= tempQuery
 query = query[:-1]
-print(query)
+f=open("Log.txt", 'a')
+f.write(query)
+
+
+f.close()
 
 # try:
 #     cursor.execute(query)

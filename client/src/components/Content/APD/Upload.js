@@ -11,6 +11,11 @@ export default class APDUpload extends Component {
             suspectSelectedFile: null,
             victimSelectedFile: null,
             narrativeSelectedFile: null,
+            offenseUploading: false,
+            arrestUploading: false,
+            suspectUploading: false,
+            victimUploading: false,
+            narrativeUploading: false,
         }
     }
 
@@ -28,6 +33,7 @@ export default class APDUpload extends Component {
     }
     offenseOnClickHandler = () => {
         if(this.state.offenseSelectedFile) {
+            this.setState({offenseUploading: true})
             const data = new FormData()
             data.append('file', this.state.offenseSelectedFile)
             axios.post("/uploadOffense", data, { 
@@ -36,6 +42,7 @@ export default class APDUpload extends Component {
            .then(res => {
             console.log(res.statusText)
             alert("Uploaded Successfully")
+            this.setState({offenseUploading: false})
          })
         } else {
             alert("No File Selected")
@@ -55,6 +62,7 @@ export default class APDUpload extends Component {
     }
     arrestOnClickHandler = () => {
         if(this.state.arrestSelectedFile) {
+            this.setState({arrestUploading: true})
             const data = new FormData()
             data.append('file', this.state.arrestSelectedFile)
             axios.post("/uploadArrest", data, { 
@@ -63,6 +71,7 @@ export default class APDUpload extends Component {
            .then(res => {
             console.log(res.statusText)
             alert("Uploaded Successfully")
+            this.setState({arrestUploading: true})
          })
         } else {
             alert("No File Selected")
@@ -82,6 +91,7 @@ export default class APDUpload extends Component {
     }
     suspectOnClickHandler = () => {
         if(this.state.suspectSelectedFile) {
+            this.setState({suspectUploading: true})
             const data = new FormData()
             data.append('file', this.state.suspectSelectedFile)
             axios.post("/uploadSuspect", data, { 
@@ -90,6 +100,7 @@ export default class APDUpload extends Component {
            .then(res => {
             console.log(res.statusText)
             alert("Uploaded Successfully")
+            this.setState({suspectUploading: true})
          })
         } else {
             alert("No File Selected")
@@ -109,6 +120,7 @@ export default class APDUpload extends Component {
     }
     victimOnClickHandler = () => {
         if(this.state.victimSelectedFile) {
+            this.setState({victimUploading: true})
             const data = new FormData()
             data.append('file', this.state.victimSelectedFile)
             axios.post("/uploadVictim", data, { 
@@ -117,6 +129,7 @@ export default class APDUpload extends Component {
            .then(res => {
             console.log(res.statusText)
             alert("Uploaded Successfully")
+            this.setState({victimUploading: true})
          })
         } else {
             alert("No File Selected")
@@ -136,6 +149,7 @@ export default class APDUpload extends Component {
     }
     narrativeOnClickHandler = () => {
         if(this.state.narrativeSelectedFile) {
+            this.setState({narrativeUploading: true})
             const data = new FormData()
             data.append('file', this.state.narrativeSelectedFile)
             axios.post("/uploadNarrative", data, { 
@@ -144,6 +158,7 @@ export default class APDUpload extends Component {
            .then(res => {
             console.log(res.statusText)
             alert("Uploaded Successfully")
+            this.setState({narrativeUploading: true})
          })
         } else {
             alert("No File Selected")
@@ -161,7 +176,7 @@ export default class APDUpload extends Component {
                     </div>
                     <div className='card-body'>
                         <input style={{marginBottom:'20px'}} type="file" name="file" onChange={this.offenseOnChangeHandler}/>
-                        <button type="button" className="btn btn-success btn-block" onClick={this.offenseOnClickHandler}>Upload</button> 
+                        <button type="button" className="btn btn-success btn-block" onClick={this.offenseOnClickHandler}>{this.state.offenseUploading?"Uploading...":"Upload"}</button> 
                     </div>
                 </div>
 
@@ -171,7 +186,7 @@ export default class APDUpload extends Component {
                     </div>
                     <div className='card-body'>
                         <input style={{marginBottom:'20px'}} type="file" name="file" onChange={this.arrestOnChangeHandler}/>
-                        <button type="button" className="btn btn-success btn-block" onClick={this.arrestOnClickHandler}>Upload</button> 
+                        <button type="button" className="btn btn-success btn-block" onClick={this.arrestOnClickHandler}>{this.state.arrestUploading?"Uploading...":"Upload"}</button> 
                     </div>
                 </div>
 
@@ -181,7 +196,7 @@ export default class APDUpload extends Component {
                     </div>
                     <div className='card-body'>
                         <input style={{marginBottom:'20px'}} type="file" name="file" onChange={this.suspectOnChangeHandler}/>
-                        <button type="button" className="btn btn-success btn-block" onClick={this.suspectOnClickHandler}>Upload</button> 
+                        <button type="button" className="btn btn-success btn-block" onClick={this.suspectOnClickHandler}>{this.state.suspectUploading?"Uploading...":"Upload"}</button> 
                     </div>
                 </div>
 
@@ -191,7 +206,7 @@ export default class APDUpload extends Component {
                     </div>
                     <div className='card-body'>
                         <input style={{marginBottom:'20px'}} type="file" name="file" onChange={this.victimOnChangeHandler}/>
-                        <button type="button" className="btn btn-success btn-block" onClick={this.victimOnClickHandler}>Upload</button> 
+                        <button type="button" className="btn btn-success btn-block" onClick={this.victimOnClickHandler}>{this.state.victimUploading?"Uploading...":"Upload"}</button> 
                     </div>
                 </div>
 
@@ -201,7 +216,7 @@ export default class APDUpload extends Component {
                     </div>
                     <div className='card-body'>
                         <input style={{marginBottom:'20px'}} type="file" name="file" onChange={this.narrativeOnChangeHandler}/>
-                        <button type="button" className="btn btn-success btn-block" onClick={this.narrativeOnClickHandler}>Upload</button> 
+                        <button type="button" className="btn btn-success btn-block" onClick={this.narrativeOnClickHandler}>{this.state.narrativeUploading?"Uploading...":"Upload"}</button> 
                     </div>
                 </div>
                 
