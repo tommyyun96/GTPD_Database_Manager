@@ -7,7 +7,12 @@ import pyodbc
 
 
 
+conn = pyodbc.connect('Driver={SQL Server};'
+                      'Server=130.207.68.107;'
+                      'Database=CrimeAnalytics;'
+                      'Trusted_Connection=yes;')
 
+cursor = conn.cursor()
 
 filePath = './ExcelFiles/GT2-Sus.xls'
 
@@ -25,57 +30,57 @@ df.race.replace(['U', 'UNK'], ['NULL', 'NULL'], inplace=True)
 df.sex.replace(['U', 'UNK'], ['NULL', 'NULL'], inplace=True)
 df.first_name.replace(['U', 'UNK', 'UKNOWN', 'NULL'], ['UNKNOWN', 'UNKNOWN', 'UNKNOWN', 'UNKNOWN'], inplace=True)
 df.last_name.replace(['U', 'UNK', 'UKNOWN', 'NULL'], ['UNKNOWN', 'UNKNOWN', 'UNKNOWN', 'UNKNOWN'], inplace=True)
+df.replace("\'","",regex=True, inplace=True)
 
 
-query = "INSERT INTO [CrimeAnalytics].[dbo].[APD_Off] ([offense_id]\
+query = "INSERT INTO [CrimeAnalytics].[dbo].[APD_Sus] ([offense_id]\
       ,[rpt_date]\
-      ,[suffix]\
-      ,[ucr]\
+      ,[location]\
       ,[beat]\
+      ,[ucr]\
+      ,[suffix]\
+      ,[name_type]\
       ,[last_name]\
       ,[first_name]\
       ,[race]\
-      ,[sex]\
-      ,[dob]\
-      ,[Age]\
-      ,[Watch]\
+      ,[sex])\
 VALUES\
 "
 
 
 
 
-# df = df.replace(504, 'yes')
-# df = df.replace("893 PEACHTREE ST NE @BULLDOG", 'check')
-# df.replace(504, 'yes', inplace=True)
-# df['beat'][2] = 'Test'
-
 df = df.fillna('NULL')
-i = 0
 
 for index, row in df.iterrows():
-    tempQuery='('
+    tempQuery="("
 
     for col in tableColumns:
-        # f.write(col+'\n')
-        # f.write(str(row[col])+'\n')
 
         if(row[col] == 'NULL'):
-            tempQuery+='NULL, '
+            tempQuery+="NULL, "
         elif(type(row[col]) == str or type(row[col]) == pd._libs.tslibs.timestamps.Timestamp):
             tempQuery+="'"+str(row[col])+"', "
         else:
-            tempQuery+=str(row[col])+', '
+            tempQuery+=str(row[col])+", "
     tempQuery = tempQuery[:-2]
-    tempQuery+='),'
+    tempQuery+="),"
     query+= tempQuery
 query = query[:-1]
+
 f=open("Log.txt", 'a')
 f.write(query)
 
 
 f.close()
 
+
+try:
+    cursor.execute(query)
+    conn.commit()
+    print("Suspect Added")
+except:
+    print("Unexpected error:", sys.exc_info()[0])
 
 
 # TO SAVE THE EDITED FILE

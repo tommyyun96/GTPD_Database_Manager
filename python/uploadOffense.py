@@ -74,6 +74,8 @@ VALUES\
 # df['beat'][2] = 'Test'
 
 df = df.fillna('NULL')
+df.replace("\'","",regex=True, inplace=True)
+
 
 for index, row in df.iterrows():
     tempQuery='('
